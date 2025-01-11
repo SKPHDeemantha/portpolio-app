@@ -1,12 +1,12 @@
 export default function AboutMe() {
     return (
       <div className="flex flex-col md:flex-row justify-center items-center p-10">
-        {/* Profile Image */}
+      
         <div className="w-52 h-52 bg-red-600 rounded-full overflow-hidden mb-8 md:mr-20">
           <img src="/profile.jpg" alt="Profile" className="w-full h-full object-cover" />
         </div>
   
-        {/* About Me Section */}
+       
         <div className="flex flex-col w-full md:w-96 h-auto items-center justify-center bg-slate-500 p-6 shadow-lg rounded-xl text-white">
           <h1 className="text-3xl font-bold mb-4">About Me</h1>
           <p className="text-lg text-justify">

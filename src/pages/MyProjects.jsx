@@ -1,7 +1,7 @@
 export default function MyProjects(){
     return(
         <div className="flex flex-row">
-
+            <Navbar/>
             <div className="w-[40%] h-screen bg-neutral-500 flex items-center justify-center ">
                 <h1 className="items-center justify-center"> Education</h1>
             </div>

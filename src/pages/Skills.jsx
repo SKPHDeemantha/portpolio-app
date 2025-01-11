@@ -1,6 +1,7 @@
 export default function Skills(){
     return(
         <div>
+            <Navbar/>
             <p>
     Skills:
      Full-stck Development:
