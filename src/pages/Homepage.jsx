@@ -1,7 +1,15 @@
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+
 export default function Homepage() {
+     
   return (
-    <div className="flex flex-row items-center justify-center min-h-screen bg-gradient-to-r from-teal-400 to-blue-500">
-      <div className="flex flex-row w-[80%] h-[90vh] justify-center items-center bg-white shadow-xl rounded-2xl">
+    <div className="w-full h-screen ">
+      <div className="w-full"><Navbar/></div>
+      
+    <div className="flex flex-row items-center justify-center h-[calc(100vh-100px)] w-full bg-white ">
+      
+      <div className="flex flex-row w-[80%] h-[90vh] justify-center items-center bg-gradient-to-r from-teal-400 to-blue-500 shadow-xl rounded-2xl">
       
         <div className="p-8 bg-gray-800 w-auto h-auto rounded-xl shadow-lg">
           <p className="text-4xl text-white font-semibold">
@@ -21,6 +29,7 @@ export default function Homepage() {
       </div>
 
       <div className="w-[20%] h-[90vh] bg-blue-600 rounded-2xl shadow-2xl"></div>
+    </div>
     </div>
   );
 }

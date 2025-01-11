@@ -8,13 +8,14 @@ const facebook = "https://www.facebook.com/heshan.deemantha.7/?viewas=1000006868
 
 export default function ContactMe() {
   return (
+    
     <div className="flex flex-col lg:flex-row bg-gradient-to-r from-teal-400 via-green-400 to-lime-400 shadow-lg w-screen h-screen items-center justify-center p-10">
-      {/* Left Section */}
+      
       <div className="w-full lg:w-[45%] h-[500px] p-5 flex justify-center items-center rounded-2xl shadow-lg">
         <img src="/contact.jpg" alt="Contact" className="w-full h-full object-cover rounded-lg" />
       </div>
 
-      {/* Right Section */}
+    
       <div className="w-full lg:w-[45%] h-[500px] p-6 shadow-xl flex flex-col justify-center items-center space-y-6 rounded-2xl bg-gradient-to-b from-blue-200 to-teal-300">
         <h2 className="text-3xl font-semibold text-gray-800">Get in Touch</h2>
         <p className="text-gray-700 text-lg text-center mb-6">Feel free to reach out to me via any of these platforms:</p>
