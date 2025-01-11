@@ -1,26 +1,26 @@
 import Navbar from "../components/Navbar";
 
-export default function MyProjects(){
-    return(
-        <div className="w-full h-screen bg-slate-500">
-             <Navbar/>
-        <div className="w-full bg-red-600 h-[calc(100vh-4rem)] flex flex-row gap-6 p-6">
-           
-            <div className="w-[40%] h-screen bg-neutral-500 flex  items-center justify-center ">
-                <h1 className="items-center justify-center"> Education</h1>
-            </div>
+export default function MyProjects() {
+  return (
+    <div className="w-full h-screen bg-gray-800">
 
-            <div className="w-[60%] h-screen bg-orange-200 items-center justify-center">
-                <p className="w-80 h-auto items-center justify-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                     Nesciunt placeat error minima deleniti esse earum nulla 
-                     modi obcaecati blanditiis quos maxime, dignissimos iste labore,
-                     quibusdam facere quasi exercitationem quidem tempora?</p>
-                <div/>
-
-            </div>
+      <Navbar />
 
 
+      <div className="w-full h-[calc(100vh-4rem)] flex flex-row gap-8 p-8 bg-gradient-to-b from-gray-800 to-gray-600">
+
+        <div className="w-[40%] h-80 bg-gray-900 flex items-center justify-center rounded-2xl shadow-xl mt-32">
+          <h1 className="text-4xl font-bold text-white text-center">Education</h1>
         </div>
+
+    
+        <div className="w-[60%] h-96 bg-gray-900 p-8 rounded-2xl shadow-xl flex flex-col items-center justify-center mt-24">
+          <p className="text-lg text-white text-justify leading-relaxed">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt placeat error minima deleniti esse earum nulla 
+            modi obcaecati blanditiis quos maxime, dignissimos iste labore, quibusdam facere quasi exercitationem quidem tempora?
+          </p>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
