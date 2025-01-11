@@ -1,7 +1,11 @@
+import Navbar from "../components/Navbar";
+
 export default function Skills(){
     return(
-        <div>
+        <div className="w-full h-screen">
             <Navbar/>
+        <div className="w-full bg-purple-300 h-[calc(100vh-4rem)] flex flex-row gap-6 p-6">
+            
             <p>
     Skills:
      Full-stck Development:
@@ -17,6 +21,6 @@ export default function Skills(){
     
     Other:
      JSON</p>
-        </div>
+        </div></div>
     )
 }

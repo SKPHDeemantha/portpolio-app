@@ -1,8 +1,12 @@
+import Navbar from "../components/Navbar";
+
 export default function MyProjects(){
     return(
-        <div className="flex flex-row">
-            <Navbar/>
-            <div className="w-[40%] h-screen bg-neutral-500 flex items-center justify-center ">
+        <div className="w-full h-screen bg-slate-500">
+             <Navbar/>
+        <div className="w-full bg-red-600 h-[calc(100vh-4rem)] flex flex-row gap-6 p-6">
+           
+            <div className="w-[40%] h-screen bg-neutral-500 flex  items-center justify-center ">
                 <h1 className="items-center justify-center"> Education</h1>
             </div>
 
@@ -16,6 +20,7 @@ export default function MyProjects(){
             </div>
 
 
+        </div>
         </div>
     )
 }

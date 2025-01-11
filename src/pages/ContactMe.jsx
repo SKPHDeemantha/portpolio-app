@@ -3,13 +3,15 @@ import { SiWhatsapp } from "react-icons/si";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { IoIosMailUnread } from "react-icons/io";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
+import Navbar from "../components/Navbar";
 
 const facebook = "https://www.facebook.com/heshan.deemantha.7/?viewas=100000686899395";
 
 export default function ContactMe() {
   return (
-    
-    <div className="flex flex-col lg:flex-row bg-gradient-to-r from-teal-400 via-green-400 to-lime-400 shadow-lg w-screen h-screen items-center justify-center p-10">
+    <div className="w-full h-screen">
+      <Navbar/>
+    <div className="flex flex-col lg:flex-row bg-gradient-to-r from-teal-400 via-green-400 to-lime-400 shadow-lg w-full h-[calc(100vh-4rem)] items-center justify-center p-10">
       
       <div className="w-full lg:w-[45%] h-[500px] p-5 flex justify-center items-center rounded-2xl shadow-lg">
         <img src="/contact.jpg" alt="Contact" className="w-full h-full object-cover rounded-lg" />
@@ -47,6 +49,7 @@ export default function ContactMe() {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }
