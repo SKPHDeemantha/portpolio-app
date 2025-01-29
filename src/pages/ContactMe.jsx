@@ -11,7 +11,7 @@ export default function ContactMe() {
   return (
     <div className="w-full h-screen">
       <Navbar/>
-    <div className="flex flex-col lg:flex-row bg-gradient-to-r from-gray-800 via-gray-700 to-gray-500 shadow-lg w-full h-[calc(100vh-4rem)] items-center justify-center p-10">
+    <div className="flex flex-col lg:flex-row bg-gradient-to-t from-gray-800 via-gray-700 to-gray-500 shadow-lg w-full h-[calc(100vh-4rem)] items-center justify-center p-10">
       
       <div className="w-full lg:w-[45%] h-[500px] p-5 flex justify-center items-center rounded-2xl shadow-lg">
         <img src="/contact.jpg" alt="Contact" className="w-full h-full object-cover rounded-lg" />

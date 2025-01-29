@@ -6,7 +6,7 @@ export default function Skills() {
   return (
     <div className="w-full h-screen bg-gray-900">
       <Navbar />
-      <div className="w-full h-[calc(100vh-4rem)] flex flex-row gap-8 p-8 bg-gradient-to-b from-gray-800 to-gray-600">
+      <div className="w-full h-[calc(100vh-4rem)] flex flex-row gap-8 p-8 bg-gradient-to-t from-gray-800 to-gray-600">
      
         <div className="w-full h-auto flex flex-wrap justify-center gap-8 flex-grow">
           <div className="flex flex-col items-center justify-center bg-gray-800 p-6 rounded-xl shadow-lg">

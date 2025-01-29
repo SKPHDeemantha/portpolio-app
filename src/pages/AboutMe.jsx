@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 
 export default function AboutMe() {
   return (
-    <div className="w-full h-screen bg-gradient-to-b from-gray-800 to-gray-600">
+    <div className="w-full h-screen bg-gradient-to-t from-gray-800 to-gray-600">
     
       <Navbar />
 

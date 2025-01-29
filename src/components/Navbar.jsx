@@ -2,15 +2,15 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="w-full h-auto flex flex-row p-4 bg-gradient-to-r from-gray-800 to-gray-600 shadow-lg">
+    <nav className="w-full h-auto flex flex-row p-4 bg-gradient-to-t from-gray-800 to-gray-600 shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         
-        {/* Logo Section */}
+
         <div className="mr-96">
           <h1 className="text-2xl font-bold text-white">MyPortfolio</h1>
         </div>
 
-        {/* Navigation Links */}
+       
         <div className="flex space-x-6">
           <Link
             to="/"
