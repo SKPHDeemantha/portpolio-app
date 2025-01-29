@@ -38,7 +38,7 @@ export default function Homepage() {
 
             </p>
             <button className="mt-10 bg-orange-500 text-white px-6 py-3 rounded-full
-             hover:bg-orange-400 transition duration-300 flex items-center justify-center text-lg
+             hover:bg-orange-400 transition duration-300 flex items-center justify-center text-lg hover:animate-pulse
              " onClick={move}>
               Software Engineer
               <Link className="ml-3 flex items-center">

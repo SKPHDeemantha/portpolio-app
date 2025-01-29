@@ -14,31 +14,31 @@ export default function Navbar() {
         <div className="flex space-x-6">
           <Link
             to="/"
-            className="hover:bg-gray-700 px-4 py-2 shadow-md rounded-lg text-white transition duration-300"
+            className="hover:bg-gray-700 px-4 py-2 shadow-md rounded-lg text-white transition duration-300 hover:shadow-xl hover:animate-pulse hover:outline"
           >
             Home
           </Link>
           <Link
             to="/aboutme"
-            className="hover:bg-gray-700 px-4 py-2 shadow-md rounded-lg text-white transition duration-300"
+            className="hover:bg-gray-700 px-4 py-2 shadow-md rounded-lg text-white transition duration-300 hover:shadow-xl hover:animate-pulse hover:outline"
           >
             About Me
           </Link>
           <Link
             to="/skills"
-            className="hover:bg-gray-700 px-4 py-2 shadow-md rounded-lg text-white transition duration-300"
+            className="hover:bg-gray-700 px-4 py-2 shadow-md rounded-lg text-white transition duration-300 hover:shadow-xl hover:animate-pulse hover:outline"
           >
             Skills
           </Link>
           <Link
             to="/myprojects"
-            className="hover:bg-gray-700 px-4 py-2 shadow-md rounded-lg text-white transition duration-300"
+            className="hover:bg-gray-700 px-4 py-2 shadow-md rounded-lg text-white transition duration-300 hover:shadow-xl hover:animate-pulse hover:outline"
           >
             My Projects
           </Link>
           <Link
             to="/contact"
-            className="hover:bg-gray-700 px-4 py-2 shadow-md rounded-lg text-white transition duration-300"
+            className="hover:bg-gray-700 px-4 py-2 shadow-md rounded-lg text-white transition duration-300 hover:shadow-xl hover:animate-pulse hover:outline"
           >
             Contact Me
           </Link>
