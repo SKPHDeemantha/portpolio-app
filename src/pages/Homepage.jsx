@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import AboutMe from "./AboutMe";
 import { Navigate } from "react-router-dom";
 import { motion } from "motion/react";
+import { TypeWritter } from "typewritter";
 
 export default function Homepage() {
   const navigate = useNavigate();
@@ -32,8 +33,10 @@ export default function Homepage() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Hi, I'm <span className="text-blue-500"> <span className="block">Heshan Deemantha</span>
-          </span>
+          <span > Hi, I'm</span>
+          <div className="text-blue-500"><TypeWritter text="Heshan Deemantha " speed={250} clearMessageSpeed={50}></TypeWritter></div>
+          
+           
         </motion.h1>
 
             </p>
