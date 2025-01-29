@@ -12,7 +12,7 @@ export default function Homepage() {
   }
 
   return (
-    <div className="w-full h-screen flex flex-col bg-gray-100">
+    <div className="w-full h-screen flex flex-col bg-gradient-to-l from-gray-300 to-gray-100">
   
       <div className="w-full">
         <Navbar />
@@ -38,7 +38,7 @@ export default function Homepage() {
           </div>
 
        
-          <div className="flex w-[40%] items-center justify-center bg-white rounded-tr-3xl rounded-br-3xl">
+          <div className="flex w-[40%] items-center justify-center bg-gradient-to-r from-slate-400 to-slate-100 rounded-tr-3xl rounded-br-3xl">
             <div className="w-56 h-56 bg-gray-200 rounded-full shadow-xl overflow-hidden">
               <img
                 className="w-full h-full object-cover"

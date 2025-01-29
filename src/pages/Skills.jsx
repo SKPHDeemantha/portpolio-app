@@ -1,5 +1,6 @@
 import StackIcon from "tech-stack-icons";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 export default function Skills() {
   return (
@@ -57,8 +58,13 @@ export default function Skills() {
         
         <div className="w-[60%] h-96 bg-gray-900 p-8 rounded-2xl shadow-xl flex flex-col items-center justify-center mt-24">
           <p className="text-lg text-white text-justify leading-relaxed">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt placeat error minima deleniti esse earum nulla modi obcaecati blanditiis quos maxime, dignissimos iste labore, quibusdam facere quasi exercitationem quidem tempora?
-          </p>
+            I was educated at Mahinda Rajapaksha college in Physical science stream.<br/>
+            I have learnt Regarding MERN Stack.<br/>
+            I am studying at university of Sabaragamuwa Software Engineering.(BSC.Hons).<br/>
+            This is my github account :<br/>
+            <Link to="/" className="hover:underline text-sky-500">https://github.com/SKPHDeemantha</Link>
+            
+          </p>           
         </div>
       </div>
     </div>
