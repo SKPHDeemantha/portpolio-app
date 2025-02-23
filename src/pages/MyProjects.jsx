@@ -18,6 +18,7 @@ export default function MyProjects() {
           <p className="text-lg text-white text-justify leading-relaxed">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt placeat error minima deleniti esse earum nulla 
             modi obcaecati blanditiis quos maxime, dignissimos iste labore, quibusdam facere quasi exercitationem quidem tempora?
+            Heshan Deemantha
           </p>
         </div>
       </div>
