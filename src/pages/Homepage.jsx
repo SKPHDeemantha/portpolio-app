@@ -35,7 +35,7 @@ export default function Homepage() {
 
             {/* Button */}
             <button
-              className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-400 transition duration-300 flex items-center justify-center text-lg hover:animate-pulse mx-auto md:mx-0"
+              className="mt-6 bg-gradient-to-t from-red-500 via-orange-400 to-rose-400 text-white px-6 py-3 rounded-full hover:bg-orange-400 transition duration-300 flex items-center justify-center text-lg hover:animate-pulse mx-auto md:mx-0"
               onClick={move}
             >
               Software Engineer
