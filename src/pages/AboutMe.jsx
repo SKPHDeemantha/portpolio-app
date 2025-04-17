@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import * as THREE from 'three';
 
 export default function AboutMe() {
   return (
@@ -7,8 +8,8 @@ export default function AboutMe() {
       <Navbar />
 
       
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 h-[calc(100vh-4rem)]">
-      
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 h-[calc(100vh-4rem)] bg-gradient-to-br from-[#2E073F] via-[#7A1CAC] via-40% via-pink-400 via-[#38f0e3]/20 via-green-300 via-rose-300/20 to-gray-600/70">
+         {/* profile picture */}
         <div className="w-52 h-52 flex-shrink-0">
           <img
             src="/profile.jpg"
@@ -16,9 +17,9 @@ export default function AboutMe() {
             className="w-full h-full object-cover rounded-full border-4 border-white shadow-xl"
           />
         </div>
-
-        <div className="flex flex-col flex-grow max-w-3xl bg-gray-900 p-8 rounded-3xl shadow-2xl text-white">
-          <h1 className="text-4xl font-bold mb-6 text-center">
+        {/* about me */}
+        <div className="flex flex-col flex-grow max-w-3xl bg-gray-900 p-8 rounded-3xl shadow-2xl text-white  bg-gray-900/90 backdrop-blur-sm  hover:shadow-[#38f0e3]/40 transition-all duration-300  items-center justify-center space-y-6  border border-white/10 hover:border-[#38f0e3]/30">
+          <h1 className="text-4xl font-bold mb-6 text-center bg-gradient-to-tr from-[#7A1CAC] via-pink-400 to-[#38f0e3] bg-clip-text text-transparent">
             About Me
           </h1>
           <p className="text-lg leading-relaxed">

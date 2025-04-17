@@ -19,6 +19,7 @@
     "react-router-dom": "^7.1.1",
     "router": "^1.3.8",
     "tech-stack-icons": "^2.1.0",
+    "three": "^0.175.0",
     "typewritter": "^1.0.9"
   },
   "devDependencies": {

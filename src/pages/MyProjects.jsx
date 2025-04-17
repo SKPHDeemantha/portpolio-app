@@ -5,7 +5,7 @@ export default function MyProjects() {
     <div className="w-full min-h-screen bg-gray-800">
       <Navbar />
 
-      <div className="w-full h-[calc(100vh-4rem)] flex flex-col lg:flex-row gap-8 p-8 bg-gradient-to-br from-[#2E073F] via-[#7A1CAC] via-40% via-pink-400/20 via-[#38f0e3]/20 via-green-300/20 via-rose-300/20 to-gray-600/70">
+      <div className="w-full h-[calc(100vh-4rem)] flex flex-col lg:flex-row gap-8 p-8 bg-gradient-to-br from-[#2E073F] via-[#7A1CAC] via-40% via-pink-400 via-[#38f0e3]/20 via-green-300 via-rose-300/20 to-gray-600/70">
         {/* Education Card */}
         <div className="w-full lg:w-[35%] h-full flex items-center justify-center p-4 mt-8 lg:mt-24">
           <div className="w-full h-80 bg-gray-900/90 backdrop-blur-sm rounded-2xl shadow-2xl hover:shadow-[#7A1CAC]/40 transition-all duration-300 flex flex-col items-center justify-center space-y-6 p-6 border border-white/10 hover:border-[#38f0e3]/30">
