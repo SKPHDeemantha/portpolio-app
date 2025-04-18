@@ -8,7 +8,7 @@ export default function AboutMe() {
       <Navbar />
 
       
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 h-[calc(100vh-4rem)] bg-gradient-to-br from-[#2E073F] via-[#7A1CAC] via-40% via-pink-400 via-[#38f0e3]/20 via-green-300 via-rose-300/20 to-gray-600/70">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 h-[calc(100vh-4rem)] bg-gradient-to-t from-[#2E073F] via-[#7A1CAC] via-40% via-pink-400 via-[#38f0e3]/20 via-green-300 via-rose-300/20 to-gray-600/70">
          {/* profile picture */}
         <div className="w-52 h-52 flex-shrink-0">
           <img

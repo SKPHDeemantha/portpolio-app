@@ -8,7 +8,7 @@ export default function Skills() {
   const [loadingStatus, setLoadingStatus] = useState("loading");
 
   useEffect(() => {
-    setTimeout(() => setLoadingStatus("loaded"), 1000); 
+    setTimeout(() => setLoadingStatus("loaded"), 500); 
   }, []);
 
   if (loadingStatus === "loading") {
@@ -57,7 +57,7 @@ export default function Skills() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.1 }}
-              className="flex flex-col items-center justify-center bg-gray-800 p-6 rounded-xl shadow-lg"
+              className="flex flex-col items-center justify-center bg-gray-800 p-6 rounded-xl shadow-lg  bg-gray-900/90 backdrop-blur-sm  hover:shadow-[#38f0e3]/40 transition-all duration-300 space-y-6  border border-white/10 hover:border-[#38f0e3]/30"
             >
               <StackIcon name={skill.icon} className="text-6xl text-white" />
               <p className="text-white mt-2">{skill.name}</p>
