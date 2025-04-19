@@ -23,15 +23,15 @@ export default function ContactMe() {
         <p className="text-white text-lg text-center mb-6">Feel free to reach out to me via any of these platforms:</p>
 
         <div className="flex flex-col space-y-4 w-full">
-          <Link className="flex items-center p-4 bg-teal-500 text-white rounded-xl hover:bg-teal-600 transition duration-300">
+          <Link className="flex items-center p-4 bg-gradient-to-br from-green-600 to-slate-200 text-white rounded-xl hover:bg-teal-600 transition duration-300">
             <SiWhatsapp className="mr-3 text-2xl" />
             0776171219
           </Link>
-          <Link className="flex items-center p-4 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition duration-300">
+          <Link className="flex items-center p-4 bg-gradient-to-br from-blue-600 to-slate-200 text-white rounded-xl hover:bg-blue-600 transition duration-300">
             <FaFacebookMessenger className="mr-3 text-2xl" />
             facebook
           </Link>
-          <Link className="flex items-center p-4 bg-indigo-500 text-white rounded-xl hover:bg-indigo-600 transition duration-300">
+          <Link className="flex items-center p-4 bg-gradient-to-br from-red-600 to-slate-200 text-white rounded-xl hover:bg-indigo-600 transition duration-300">
             <IoIosMailUnread className="mr-3 text-2xl" />
             heshandeemantha99@gmail.com
           </Link>
