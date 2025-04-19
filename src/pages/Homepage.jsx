@@ -23,10 +23,11 @@ export default function Homepage() {
       <>
         <div className="w-full min-h-screen flex flex-col bg-gradient-to-t from-gray-300 to-gray-100">
           {/* Navbar */}
+          
           <Navbar />
 
           {/* Main Content */}
-          <div className="flex items-center justify-center h-full w-full px-4">
+          <div className="flex items-center justify-center h-full w-full px-4 ">
             <div className="flex flex-col md:flex-row w-full md:w-[85%] h-auto md:h-[90vh] bg-gradient-to-r from-teal-500 to-blue-600 shadow-2xl rounded-3xl overflow-hidden p-6 md:p-0">
               {/* Left Section (Text & Button) */}
               <div className="p-8 bg-gray-900 w-full md:w-[60%] flex flex-col justify-center text-center md:text-left rounded-t-3xl md:rounded-tl-3xl md:rounded-bl-3xl">
