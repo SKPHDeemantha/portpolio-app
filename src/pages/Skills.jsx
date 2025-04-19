@@ -42,7 +42,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-white mb-8"
+          className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-violet-600 to-pink-500 mb-8"
         >
           My Skills
         </motion.div>
@@ -72,7 +72,7 @@ export default function Skills() {
           className="w-[80%] bg-gray-900 p-8 rounded-2xl shadow-xl mt-16"
         >
           <div className="items-center justify-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Education</h1>
+          <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-violet-600 to-pink-500 mb-4">Education</h1>
           <p className="text-lg text-white leading-relaxed">
             I was educated at Mahinda Rajapaksha College in the Physical Science stream.<br />
             I have learned about the MERN Stack.<br />

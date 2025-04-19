@@ -14,7 +14,7 @@ export default function AboutMe() {
           <img
             src="/profile.jpg"
             alt="Profile"
-            className="w-full h-full object-cover rounded-full border-4 border-white shadow-xl"
+            className="w-full h-full object-cover rounded-full border-4 border-dashed border-white shadow-xl"
           />
         </div>
         {/* about me */}
@@ -22,16 +22,16 @@ export default function AboutMe() {
           <h1 className="text-4xl font-bold mb-6 text-center bg-gradient-to-tr from-[#7A1CAC] via-pink-400 to-[#38f0e3] bg-clip-text text-transparent">
             About Me
           </h1>
-          <p className="text-lg leading-relaxed">
-            <strong className="block mb-2">Name:</strong> 
+          <p className="text-lg leading-relaxed text-left w-full">
+            <strong className="block mb-2 bg-clip-text text-transparent bg-gradient-to-br from-violet-600 to-pink-500">Name:</strong> 
             S.K.P. Heshan Deemantha
           </p>
-          <p className="text-lg leading-relaxed">
-            <strong className="block mb-2">Title:</strong> 
+          <p className="text-lg leading-relaxed text-left w-full">
+            <strong className="block mb-2 bg-clip-text text-transparent bg-gradient-to-br from-violet-600 to-pink-500 ">Title:</strong> 
             React Developer | Frontend Developer
           </p>
-          <p className="text-lg leading-relaxed mt-4 text-justify">
-            <strong>About Me:</strong>
+          <p className="text-lg leading-relaxed mt-4 text-justify ">
+            <strong className="bg-clip-text text-transparent bg-gradient-to-br from-violet-600 to-pink-500">About Me:</strong>
             <br />
             Hello! I’m Heshan, a passionate React Developer with a love for creating interactive and user-friendly web applications. I started my journey in web development 6 months ago when I decided to turn my interest in technology into a career. I enjoy solving problems and building dynamic web experiences using modern JavaScript frameworks. I’m always eager to learn new technologies and improve my skills.
           </p>

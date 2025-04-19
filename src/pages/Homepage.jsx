@@ -36,7 +36,7 @@ export default function Homepage() {
                   animate={{ opacity: 1, y: 0 }}
                 >
                   Hi, I'm
-                  <div className="text-blue-500">
+                  <div className="text-purple-500">
                     <TypeWritter
                       text="Heshan Deemantha"
                       speed={250}
