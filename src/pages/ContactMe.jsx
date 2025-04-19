@@ -18,12 +18,12 @@ export default function ContactMe() {
       </div>
 
     
-      <div className="w-full lg:w-[45%] h-[500px] p-6 shadow-xl flex flex-col justify-center items-center space-y-6 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-800">
-        <h2 className="text-3xl font-semibold text-white">Get in Touch</h2>
+      <div className="w-full lg:w-[45%] h-[500px] p-6 shadow-xl flex flex-col justify-center items-center space-y-6 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-800 bg-gray-900/90 backdrop-blur-sm  hover:shadow-[#38f0e3]/40 transition-all duration-300   border border-white/10 hover:border-[#38f0e3]/30" >
+        <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-br from-violet-600 to-pink-500 ">Get in Touch</h2>
         <p className="text-white text-lg text-center mb-6">Feel free to reach out to me via any of these platforms:</p>
 
         <div className="flex flex-col space-y-4 w-full">
-          <Link className="flex items-center p-4 bg-gradient-to-br from-green-600 to-slate-200 text-white rounded-xl hover:bg-teal-600 transition duration-300">
+          <Link className="flex items-center p-4 bg-gradient-to-br from-green-400  to-slate-200 text-white rounded-xl hover:bg-teal-600 transition duration-300">
             <SiWhatsapp className="mr-3 text-2xl" />
             0776171219
           </Link>
@@ -40,10 +40,10 @@ export default function ContactMe() {
         <div className="flex flex-grow items-center justify-center space-x-4 mt-6">
   <Link to="/" className="w-52">
     <button
-      className="px-2 py-2 bg-gray-500 text-white w-full rounded-2xl hover:bg-gray-600 transition duration-300 flex items-center justify-center space-x-2"
+      className="px-2 py-2 bg-gray-500 text-white w-full rounded-2xl hover:bg-gray-600 transition duration-300 flex items-center justify-center space-x-2 "
     >
       <MdKeyboardDoubleArrowLeft className="text-2xl" />
-      <span className="text-lg">Back to Home</span>
+      <span className="text-lg hover shadow-xl hover: border-x-teal-400 ">Back to Home</span>
     </button>
   </Link>
 </div>
