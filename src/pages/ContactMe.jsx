@@ -19,7 +19,7 @@ export default function ContactMe() {
 
     
       <div className="w-full lg:w-[45%] h-[500px] p-6 shadow-xl flex flex-col justify-center items-center space-y-6 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-800 bg-gray-900/90 backdrop-blur-sm  hover:shadow-[#38f0e3]/40 transition-all duration-300   border border-white/10 hover:border-[#38f0e3]/30" >
-        <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-br from-violet-600 to-pink-500 ">Get in Touch</h2>
+        <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-violet-600 to-pink-500 ">Get in Touch</h2>
         <p className="text-white text-lg text-center mb-6">Feel free to reach out to me via any of these platforms:</p>
 
         <div className="flex flex-col space-y-4 w-full">

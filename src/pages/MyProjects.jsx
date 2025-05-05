@@ -32,12 +32,16 @@ export default function MyProjects() {
                     <span className="text-[#38f0e3] text-xl font-bold">01</span>
                   </div>
                   <h3 className="text-xl font-semibold text-transparent bg-gradient-to-r from-pink-400 to-[#38f0e3] bg-clip-text">
-                    Computer Science Degree
+                    Software Engineering Degree
                   </h3>
                 </div>
                 <p className="text-gray-300 pl-16">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  I am Studying a Software Engineering degree in Sabaragamuwa University, Sri Lanka. Learning modern programming languages, software development methodologies, and gaining hands-on experience in building real-world applications.
                 </p>
+                <video width={400} controls
+                  className="w-60 h-60 p-3 border-white">
+                    <source src="https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images//Untitled%20Video%20-%20Made%20With%20Clipchamp.mp4 " type="video/mp4"></source>
+                  </video>
               </div>
 
               <div className="space-y-4">

@@ -48,14 +48,20 @@ export default function Homepage() {
 
                 {/* Button */}
                 <button
-                  className="mt-6 bg-gradient-to-t from-red-500 via-orange-400 to-rose-400 text-white px-6 py-3 rounded-full hover:bg-orange-400 transition duration-300 flex items-center justify-center text-lg hover:animate-pulse mx-auto md:mx-0"
-                  onClick={move}
-                >
-                  Software Engineer
-                  <Link className="ml-3 flex items-center">
-                    <RiArrowRightDoubleLine />
-                  </Link>
-                </button>
+      onClick={move}
+      className="mt-6 relative bg-gradient-to-tr from-red-500 via-orange-400 to-rose-400 text-white px-8 py-3 rounded-full 
+                 transition-all duration-300 flex items-center justify-center text-lg font-semibold mx-auto md:mx-0 
+                 hover:scale-105 hover:shadow-lg hover:shadow-rose-400/40 group overflow-hidden"
+    >
+      <span className="absolute inset-0 bg-gradient-to-tr from-red-500 via-orange-400 to-rose-400 blur-lg opacity-0 group-hover:opacity-30 transition-all duration-500 rounded-full"></span>
+      
+      <span className="relative z-10 flex items-center">
+        Software Engineer
+        <Link className="ml-3 flex items-center transition-transform duration-300 group-hover:translate-x-1">
+          <RiArrowRightDoubleLine className="text-xl" />
+        </Link>
+      </span>
+    </button>
               </div>
 
               {/* Right Section (Profile Image) */}
@@ -74,8 +80,8 @@ export default function Homepage() {
               </div>
             </div>
           </div>
-          {/*second slide*/}
-          <div className="w-full h-screen bg-gradient-to-t from-gray-800 via-gray-600 to-slate-100 mt-2">
+          {/* second slide */}
+          {/* <div className="w-full h-screen bg-gradient-to-t from-gray-800 via-gray-600 to-slate-100 mt-2">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 h-[calc(100vh-4rem)]">
               <div className="w-52 h-52 flex-shrink-0">
                 <img
@@ -114,11 +120,11 @@ export default function Homepage() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/*education*/}
-        <div className="w-full h-screen bg-gray-800 ">
+        {/* <div className="w-full h-screen bg-gray-800 ">
           <div className="w-full h-[calc(100vh-4rem)] flex flex-row gap-8 p-8 bg-gradient-to-b from-gray-800 to-gray-600">
             <div className="w-[40%] h-80 bg-gray-900 flex items-center justify-center rounded-2xl shadow-xl mt-32">
               <h1 className="text-4xl font-bold text-white text-center">
@@ -136,11 +142,11 @@ export default function Homepage() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </>
 
       {/*contact*/}
-      <div className="w-full h-screen ">
+      {/* <div className="w-full h-screen ">
     
         <div className="flex flex-col lg:flex-row bg-gradient-to-t from-gray-800 via-gray-700 to-gray-500 shadow-lg w-full h-[calc(100vh-4rem)] items-center justify-center p-10">
           <div className="w-full lg:w-[45%] h-[500px] p-5 flex justify-center items-center rounded-2xl shadow-lg">
@@ -182,7 +188,7 @@ export default function Homepage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

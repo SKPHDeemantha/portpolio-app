@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import * as THREE from 'three';
+import { motion } from "framer-motion";
 
 export default function AboutMe() {
   return (
@@ -18,7 +19,11 @@ export default function AboutMe() {
           />
         </div>
         {/* about me */}
-        <div className="flex flex-col flex-grow max-w-3xl bg-gray-900 p-8 rounded-3xl shadow-2xl text-white  bg-gray-900/90 backdrop-blur-sm  hover:shadow-[#38f0e3]/40 transition-all duration-300  items-center justify-center space-y-6  border border-white/10 hover:border-[#38f0e3]/30">
+        <motion.div className="flex flex-col flex-grow max-w-3xl bg-gray-900 p-8 rounded-3xl shadow-2xl text-white  bg-gray-900/90 backdrop-blur-sm  hover:shadow-[#38f0e3]/40 transition-all duration-300  items-center justify-center space-y-6  border border-white/10 hover:border-[#38f0e3]/30"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}>
+        
           <h1 className="text-4xl font-bold mb-6 text-center bg-gradient-to-tr from-[#7A1CAC] via-pink-400 to-[#38f0e3] bg-clip-text text-transparent">
             About Me
           </h1>
@@ -38,7 +43,7 @@ export default function AboutMe() {
           <p className="text-lg leading-relaxed mt-4 text-justify">
             When I’m not coding, you can find me exploring new tech blogs, reading about UI/UX design, or hiking in nature.
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
