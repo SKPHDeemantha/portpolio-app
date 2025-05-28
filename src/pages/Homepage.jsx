@@ -21,13 +21,13 @@ export default function Homepage() {
   return (
     <>
       <>
-        <div className="w-full min-h-screen flex flex-col bg-gradient-to-t from-gray-300 to-gray-100">
+        <div className="w-full min-h-screen flex flex-col  bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
           {/* Navbar */}
           <Navbar />
 
           {/* Hero Section */}
-          <div className="flex items-center justify-center flex-1 px-4 py-12">
-            <div className="flex flex-col md:flex-row w-full max-w-7xl bg-gradient-to-r from-teal-500 to-blue-600 shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-3xl overflow-hidden transition-all">
+          <div className="flex items-center justify-center flex-1 px-4 py-12 ">
+            <div className="flex flex-col md:flex-row w-full max-w-7xl shadow-sky-800 bg-gradient-to-r from-teal-500 to-blue-600 shadow-[0_20px_10px_rgba(0,0,0,0.3)] rounded-3xl overflow-hidden transition-all">
               {/* Left: Text Content */}
               <div className="bg-gray-900 w-full md:w-[60%] flex flex-col justify-center p-10 text-white rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none text-center md:text-left">
                 <motion.h1
@@ -41,6 +41,7 @@ export default function Homepage() {
                       text="Heshan Deemantha"
                       speed={250}
                       clearMessageSpeed={50}
+                      
                     />
                   </div>
                 </motion.h1>
@@ -63,7 +64,7 @@ export default function Homepage() {
               {/* Right: Profile Image */}
               <div className="bg-gradient-to-r from-slate-400 to-slate-100 w-full md:w-[40%] flex items-center justify-center p-6 rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none">
                 <motion.div
-                  className="w-44 h-44 sm:w-60 sm:h-60 bg-gray-200 rounded-full shadow-xl overflow-hidden"
+                  className="w-64 h-64 sm:w-60 sm:h-60 bg-gray-200 rounded-full shadow-xl overflow-hidden"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
