@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="w-full h-auto flex flex-row p-4 bg-gradient-to-t from-gray-800 to-gray-600 shadow-lg relative top-0 z-50 backdrop-blur-sm">
+    <nav className="w-full h-auto flex flex-row p-4 bg-gradient from-gray-900 shadow-lg relative top-0 z-50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         
 
         <div className="mr-96">
-          <h1 className="text-2xl font-bold text-white">HD</h1>
+          <h1 className="text-2xl font-bold  text-violet-500">HD</h1>
         </div>
 
        

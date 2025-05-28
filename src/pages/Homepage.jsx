@@ -66,7 +66,7 @@ export default function Homepage() {
                 <motion.div
                   className="w-64 h-64 sm:w-60 sm:h-60 bg-gray-200 rounded-full shadow-xl overflow-hidden"
                   initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 1.5 }}
                 >
                   <img
                     className="w-full h-full object-cover"
