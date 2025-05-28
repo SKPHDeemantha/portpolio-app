@@ -7,7 +7,7 @@ export default function Navbar() {
         
 
         <div className="mr-96">
-          <h1 className="text-2xl font-bold text-white">MyPortfolio</h1>
+          <h1 className="text-2xl font-bold text-white">HD</h1>
         </div>
 
        
