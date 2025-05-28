@@ -7,6 +7,7 @@ import { FaFacebookMessenger } from "react-icons/fa";
 import { IoIosMailUnread } from "react-icons/io";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 import StackIcon from "tech-stack-icons";
+import { TypeWritter } from "typewritter";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -88,7 +89,8 @@ const Portfolio = () => {
                 animate={{ opacity: 1, y: 0 }}
               >
                 Hi, I'm{" "}
-                <span className="text-purple-500">Heshan Deemantha</span>
+                <TypeWritter className="text-purple-500">Heshan Deemantha</TypeWritter>
+                <span ></span>
               </motion.h1>
               <motion.p
                 className="mt-4 text-xl text-gray-300"
