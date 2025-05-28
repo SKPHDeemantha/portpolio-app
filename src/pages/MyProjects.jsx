@@ -10,15 +10,32 @@ export default function MyProjects() {
         <div className="w-full lg:w-[35%] h-full flex items-center justify-center p-4 mt-8 lg:mt-24">
           <div className="w-full h-80 bg-gray-900/90 backdrop-blur-sm rounded-2xl shadow-2xl hover:shadow-[#7A1CAC]/40 transition-all duration-300 flex flex-col items-center justify-center space-y-6 p-6 border border-white/10 hover:border-[#38f0e3]/30">
             <div className="p-4 bg-gradient-to-r from-[#7A1CAC] to-[#38f0e3] rounded-full">
-              <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              <svg
+                className="w-12 h-12 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 14l9-5-9-5-9 5 9 5z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                />
               </svg>
             </div>
             <h1 className="text-4xl font-bold bg-gradient-to-r from-[#7A1CAC] via-pink-400 to-[#38f0e3] bg-clip-text text-transparent">
               Education
             </h1>
-            <p className="text-gray-300 text-center">Exploring the spectrum of knowledge</p>
+            <p className="text-gray-300 text-center">
+              Exploring the spectrum of knowledge
+            </p>
           </div>
         </div>
 
@@ -36,12 +53,21 @@ export default function MyProjects() {
                   </h3>
                 </div>
                 <p className="text-gray-300 pl-16">
-                  I am Studying a Software Engineering degree in Sabaragamuwa University, Sri Lanka. Learning modern programming languages, software development methodologies, and gaining hands-on experience in building real-world applications.
+                  I am Studying a Software Engineering degree in Sabaragamuwa
+                  University, Sri Lanka. Learning modern programming languages,
+                  software development methodologies, and gaining hands-on
+                  experience in building real-world applications.
                 </p>
-                <video width={400} controls
-                  className="w-60 h-60 p-3 border-white">
-                    <source src="https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images//Untitled%20Video%20-%20Made%20With%20Clipchamp.mp4 " type="video/mp4"></source>
-                  </video>
+                <video
+                  width={400}
+                  controls
+                  className="w-60 h-60 p-3 border-white"
+                >
+                  <source
+                    src="https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images//Untitled%20Video%20-%20Made%20With%20Clipchamp.mp4 "
+                    type="video/mp4"
+                  ></source>
+                </video>
               </div>
 
               <div className="space-y-4">
@@ -54,7 +80,8 @@ export default function MyProjects() {
                   </h3>
                 </div>
                 <p className="text-gray-300 pl-16">
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
               </div>
 
@@ -68,7 +95,8 @@ export default function MyProjects() {
                   </h3>
                 </div>
                 <p className="text-gray-300 pl-16">
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur.
                 </p>
               </div>
             </div>
@@ -84,7 +112,7 @@ export default function MyProjects() {
           background: rgba(255, 255, 255, 0.1);
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: linear-gradient(#7A1CAC, #38f0e3);
+          background: linear-gradient(#7a1cac, #38f0e3);
           border-radius: 4px;
         }
       `}</style>
