@@ -24,9 +24,12 @@ export default function AboutMe() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}>
         
-          <h1 className="text-4xl font-bold mb-6 text-center bg-gradient-to-tr from-[#7A1CAC] via-pink-400 to-[#38f0e3] bg-clip-text text-transparent">
+          <motion.h1 className="text-4xl font-bold mb-6 text-center bg-gradient-to-tr from-[#7A1CAC] via-pink-400 to-[#38f0e3] bg-clip-text text-transparent"
+           initial={{ opacity: 0, y: -40 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 1.5 }}>
             About Me
-          </h1>
+          </motion.h1>
           <p className="text-lg leading-relaxed text-left w-full">
             <strong className="block mb-2 bg-clip-text text-transparent bg-gradient-to-br from-violet-600 to-pink-500">Name:</strong> 
             S.K.P. Heshan Deemantha

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { SiWhatsapp } from "react-icons/si";
 import { FaFacebookMessenger } from "react-icons/fa";
@@ -5,66 +6,97 @@ import { IoIosMailUnread } from "react-icons/io";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import Navbar from "../components/Navbar";
 
-const facebook = "https://www.facebook.com/heshan.deemantha.7/?viewas=100000686899395";
-
 export default function ContactMe() {
   return (
-    <div className="w-full h-screen">
-      <Navbar/>
-    <div className="flex flex-col lg:flex-row bg-gradient-to-t from-gray-800 via-gray-700 to-gray-500 shadow-lg w-full h-[calc(100vh-4rem)] items-center justify-center p-10">
-      
-      <div className="w-full lg:w-[45%] h-[500px] p-5 flex justify-center items-center rounded-2xl shadow-lg">
-        <img src="/contact.jpg" alt="Contact" className="w-full h-full object-cover rounded-lg" />
+    <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
+      <Navbar />
+
+      <div className="flex flex-col items-center px-6 py-16 md:py-20">
+        {/* Title */}
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500 mb-4">
+            Let's Connect
+          </h1>
+          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+            I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          </p>
+        </motion.div>
+
+        {/* Contact Info Cards */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { delayChildren: 0.3, staggerChildren: 0.2 },
+            },
+          }}
+        >
+          {[
+            {
+              icon: <SiWhatsapp className="text-3xl text-green-400" />,
+              label: "0776171219",
+              bg: "from-green-500/10 to-gray-800/20",
+            },
+            {
+              icon: <FaFacebookMessenger className="text-3xl text-blue-400" />,
+              label: "Facebook Messenger",
+              bg: "from-blue-500/10 to-gray-800/20",
+              link: "https://www.facebook.com/heshan.deemantha.7",
+            },
+            {
+              icon: <IoIosMailUnread className="text-3xl text-red-400" />,
+              label: "heshandeemantha99@gmail.com",
+              bg: "from-red-500/10 to-gray-800/20",
+              link:"heshandeemantha99@gmail.com",
+            },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              variants={{
+                hidden: { opacity: 0, scale: 0.9 },
+                visible: { opacity: 1, scale: 1 },
+              }}
+              whileHover={{ scale: 1.05 }}
+              className={`p-6 rounded-2xl bg-gradient-to-br ${item.bg} border border-white/10 hover:border-white/20 shadow-lg backdrop-blur-sm transition-all duration-300`}
+            >
+              <div className="flex items-center space-x-4">
+                {item.icon}
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-lg font-medium hover:underline">
+                    {item.label}
+                  </a>
+                ) : (
+                  <p className="text-lg font-medium">{item.label}</p>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Back Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="mt-16"
+        >
+          <Link to="/">
+            <button className="flex items-center space-x-2 bg-gradient-to-r from-gray-600 to-gray-700 px-6 py-3 rounded-full hover:scale-105 transition transform duration-300 text-white shadow-md">
+              <MdKeyboardDoubleArrowLeft className="text-xl" />
+              <span>Back to Home</span>
+            </button>
+          </Link>
+        </motion.div>
       </div>
-
-    
-      <div className="w-full lg:w-[45%] h-[500px] p-6 shadow-xl flex flex-col justify-center items-center space-y-6 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-800 bg-gray-900/90 backdrop-blur-sm  hover:shadow-[#38f0e3]/40 transition-all duration-300   border border-white/10 hover:border-[#38f0e3]/30" >
-        <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-violet-600 to-pink-500 ">Get in Touch</h2>
-        <p className="text-white text-lg text-center mb-6">Feel free to reach out to me via any of these platforms:</p>
-
-        <div className="flex flex-col space-y-4 w-full">
-          <Link className="flex items-center p-4 bg-gradient-to-br from-green-400  to-slate-200 text-white rounded-xl hover:bg-teal-600 transition duration-300">
-            <SiWhatsapp className="mr-3 text-2xl" />
-            0776171219
-          </Link>
-          <Link className="flex items-center p-4 bg-gradient-to-br from-blue-600 to-slate-200 text-white rounded-xl hover:bg-blue-600 transition duration-300">
-            <FaFacebookMessenger className="mr-3 text-2xl" />
-            facebook
-          </Link>
-          <Link className="flex items-center p-4 bg-gradient-to-br from-red-600 to-slate-200 text-white rounded-xl hover:bg-indigo-600 transition duration-300">
-            <IoIosMailUnread className="mr-3 text-2xl" />
-            heshandeemantha99@gmail.com
-          </Link>
-        </div>
-
-        <div className="flex flex-grow items-center justify-center space-x-4 mt-6">
-  <Link to="/" className="w-52">
-    <button
-      className="px-2 py-2 bg-gray-500 text-white w-full rounded-2xl hover:bg-gray-600 transition duration-300 flex items-center justify-center space-x-2 "
-    >
-      <MdKeyboardDoubleArrowLeft className="text-2xl" />
-      <span className="text-lg hover shadow-xl hover: border-x-teal-400 ">Back to Home</span>
-    </button>
-  </Link>
-</div>
-
-      </div>
-    </div>
     </div>
   );
 }
-
-{/* <div className="flex flex-col space-y-4 w-full">
-          <Link className="flex items-center p-4 bg-teal-500 text-white rounded-xl hover:bg-teal-600 transition duration-300">
-            <SiWhatsapp className="mr-3 text-2xl" />
-            0776171219
-          </Link>
-          <Link className="flex items-center p-4 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition duration-300">
-            <FaFacebookMessenger className="mr-3 text-2xl" />
-            facebook
-          </Link>
-          <Link className="flex items-center p-4 bg-indigo-500 text-white rounded-xl hover:bg-indigo-600 transition duration-300">
-            <IoIosMailUnread className="mr-3 text-2xl" />
-            heshandeemantha99@gmail.com
-          </Link>
-        </div> */}
