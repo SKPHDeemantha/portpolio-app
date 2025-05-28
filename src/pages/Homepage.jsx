@@ -41,6 +41,7 @@ export default function Homepage() {
                       text="Heshan Deemantha"
                       speed={250}
                       clearMessageSpeed={50}
+                      
                     />
                   </div>
                 </motion.h1>
