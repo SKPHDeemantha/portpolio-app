@@ -8,6 +8,8 @@ import { IoIosMailUnread } from "react-icons/io";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 import StackIcon from "tech-stack-icons";
 import { TypeWritter } from "typewritter";
+import { FaGithub } from "react-icons/fa";
+import { label, link } from "motion/react-client";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -74,8 +76,8 @@ const Portfolio = () => {
         </motion.button>
       )}
 
-       {/* Navigation  */}
-    <Navbar activeSection={activeSection} scrollToSection={scrollToSection} /> 
+      {/* Navigation  */}
+      <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
 
       {/* Home Section */}
       <section id="home" className="min-h-screen flex flex-col">
@@ -89,8 +91,13 @@ const Portfolio = () => {
                 animate={{ opacity: 1, y: 0 }}
               >
                 Hi, I'm{" "}
-                <TypeWritter className="text-purple-500">Heshan Deemantha</TypeWritter>
-                <span ></span>
+                <div className="text-purple-500">
+                  <TypeWritter
+                    text="Heshan Deemantha"
+                    speed={250}
+                    clearMessageSpeed={50}
+                  />
+                </div>
               </motion.h1>
               <motion.p
                 className="mt-4 text-xl text-gray-300"
@@ -330,7 +337,7 @@ const Portfolio = () => {
                   <p className="text-gray-300">
                     University of Sabaragamuwa
                     <br />
-                    2022 - Present
+                    2024 - Present
                   </p>
                 </div>
               </div>
@@ -358,7 +365,7 @@ const Portfolio = () => {
                   <p className="text-gray-300">
                     Mahinda Rajapaksha College
                     <br />
-                    Physical Science Stream - 2021
+                    Physical Science Stream - 2022
                   </p>
                 </div>
               </div>
@@ -498,7 +505,7 @@ const Portfolio = () => {
           </motion.h2>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-white"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -527,6 +534,12 @@ const Portfolio = () => {
               {
                 icon: <IoIosMailUnread className="text-3xl text-red-400" />,
                 label: "heshandeemantha99@gmail.com",
+                bg: "from-red-500/10 to-gray-800/20",
+              },
+              {
+                label: "GitHub ",
+                icon: <FaGithub className="text-3xl text-white" />,
+                link: "https://github.com/SKPHDeemantha",
                 bg: "from-red-500/10 to-gray-800/20",
               },
             ].map((item, i) => (
