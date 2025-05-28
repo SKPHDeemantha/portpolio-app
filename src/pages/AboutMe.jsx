@@ -13,7 +13,7 @@ export default function AboutMe() {
          {/* profile picture */}
         <div className="w-52 h-52 flex-shrink-0">
           <img
-            src="/profile.jpg"
+            src="https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images//My%20photo.jpg"
             alt="Profile"
             className="w-full h-full object-cover rounded-full border-4 border-dashed border-white shadow-xl"
           />

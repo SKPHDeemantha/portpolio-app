@@ -69,7 +69,7 @@ export default function Homepage() {
                 >
                   <img
                     className="w-full h-full object-cover"
-                    src="/profile.jpg"
+                    src="https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images//My%20photo.jpg"
                     alt="Profile"
                   />
                 </motion.div>
