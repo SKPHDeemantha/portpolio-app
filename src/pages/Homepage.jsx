@@ -10,6 +10,7 @@ import StackIcon from "tech-stack-icons";
 import { TypeWritter } from "typewritter";
 import { FaGithub } from "react-icons/fa";
 import { label, link } from "motion/react-client";
+import { FaLinkedin } from "react-icons/fa";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -505,7 +506,7 @@ const Portfolio = () => {
           </motion.h2>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-white"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-white items-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -540,7 +541,13 @@ const Portfolio = () => {
                 label: "GitHub ",
                 icon: <FaGithub className="text-3xl text-white" />,
                 link: "https://github.com/SKPHDeemantha",
-                bg: "from-red-500/10 to-gray-800/20",
+                bg: "from-white-500/10 to-gray-800/20",
+              },
+              {
+                label: "LinkedIn ",
+                icon: <FaLinkedin className="text-3xl text-blue-500" />,
+                link: "https://www.linkedin.com/in/heshan-deemantha-4b3b34213/",
+                bg: "from-blue-500/10 to-gray-800/20",
               },
             ].map((item, i) => (
               <motion.div
