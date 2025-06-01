@@ -92,7 +92,7 @@ const Portfolio = () => {
                 animate={{ opacity: 1, y: 0 }}
               >
                 Hi, I'm{" "}
-                <div className="text-purple-500">
+                <div className="bg-gradient-to-tr from-purple-500  to-[#38f0e3] bg-clip-text text-transparent ">
                   <TypeWritter
                     text="Heshan Deemantha"
                     speed={250}
