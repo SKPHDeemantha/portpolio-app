@@ -4,7 +4,7 @@ import { SiWhatsapp } from "react-icons/si";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { IoIosMailUnread } from "react-icons/io";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import Navbar from "../components/Navbar";
+import Navbar from "./Navbar";
 
 export default function ContactMe() {
   return (

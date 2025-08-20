@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, stagger } from "framer-motion";
 import StackIcon from "tech-stack-icons";
-import Navbar from "../components/Navbar";
+import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
 export default function Skills() {

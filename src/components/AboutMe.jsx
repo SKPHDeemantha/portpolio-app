@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import Navbar from "./Navbar";
 import * as THREE from "three";
 import { motion } from "framer-motion";
 
