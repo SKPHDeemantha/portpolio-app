@@ -2,9 +2,9 @@
 export const resumeData = {
   personalInfo: {
     name: "Heshan Deemantha",
-    title: "Full Stack Developer & UI/UX Designer",
-    email: "heshandeemantha@gmail.com",
-    phone: "+94 77 123 4567",
+    title: "BackEnd Developer & Cloud Enginner",
+    email: "heshandeemantha90@gmail.com",
+    phone: "+94 776171219",
     location: "Colombo, Sri Lanka",
     linkedin: "linkedin.com/in/heshan-deemantha",
     github: "github.com/SKPHDeemantha",
@@ -16,7 +16,7 @@ export const resumeData = {
   skills: {
     technical: [
       "JavaScript (ES6+)", "React.js", "Node.js", "Express.js", 
-      "MongoDB", "PostgreSQL", "HTML5/CSS3", "Tailwind CSS", 
+      "MongoDB", "HTML5/CSS3", "Tailwind CSS", 
       "Git/GitHub", "REST APIs", "GraphQL", "TypeScript",
       "Python", "Django", "Firebase", "AWS Services"
     ],
@@ -26,36 +26,36 @@ export const resumeData = {
     ],
     tools: [
       "VS Code", "Figma", "Postman", "Docker", 
-      "Webpack", "Vite", "Jest", "Cypress"
+      "Webpack", "Vite"
     ]
   },
 
   experience: [
-    {
-      position: "Full Stack Developer",
-      company: "Tech Innovations Ltd.",
-      duration: "2022 - Present",
-      location: "Colombo, Sri Lanka",
-      achievements: [
-        "Developed and maintained 10+ web applications using React and Node.js",
-        "Improved application performance by 40% through code optimization",
-        "Led a team of 3 developers on a major e-commerce project",
-        "Implemented CI/CD pipelines reducing deployment time by 60%"
-      ]
-    },
-    {
-      position: "Frontend Developer",
-      company: "Digital Solutions Inc.",
-      duration: "2021 - 2022",
-      location: "Colombo, Sri Lanka",
-      achievements: [
-        "Built responsive user interfaces for banking applications",
-        "Collaborated with UX designers to implement pixel-perfect designs",
-        "Reduced page load time by 35% through performance optimization",
-        "Mentored junior developers on React best practices"
-      ]
-    }
-  ],
+  {
+    position: "Backend Developer",
+    company: "Tech Innovations Ltd.",
+    duration: "2022 - Present",
+    location: "Colombo, Sri Lanka",
+    achievements: [
+      "Developed and maintained 10+ scalable backend services using Node.js and Express",
+      "Optimized database queries (MySQL/MongoDB) improving API response times by 40%",
+      "Led a team of 3 developers on a major e-commerce backend integration project",
+      "Implemented CI/CD pipelines reducing deployment time by 60%"
+    ]
+  },
+  {
+    position: "SAP Operator",
+    company: "Raigam Marketing Service",
+    duration: "June 2023 - October 2024",
+    location: "Colombo, Sri Lanka",
+    achievements: [
+      "Managed SAP ERP modules for sales and inventory operations",
+      "Generated and analyzed daily, weekly, and monthly business reports using SAP",
+      "Coordinated with finance and supply chain teams to ensure accurate data entry",
+      "Trained new staff on SAP processes and provided ongoing system support"
+    ]
+  }
+],
 
   education: [
     {
@@ -88,9 +88,9 @@ export const resumeData = {
       live: "ecommerce-demo.heshan.com"
     },
     {
-      name: "Task Management App",
+      name: "Portpolio ",
       description: "Collaborative task management application with real-time updates",
-      technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
+      technologies: ["React", "Socket.io"],
       features: [
         "Real-time collaboration",
         "Drag & drop interface",
@@ -111,9 +111,9 @@ export const resumeData = {
       credential: "AWS-DEV-12345"
     },
     {
-      name: "React Developer Certification",
+      name: "MERN Stack Certification",
       issuer: "Meta",
-      date: "2022",
+      date: "2024",
       credential: "META-REACT-67890"
     }
   ],
