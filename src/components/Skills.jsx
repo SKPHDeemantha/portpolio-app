@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import StackIcon from "tech-stack-icons";
-import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
 export default function Skills() {
@@ -64,13 +63,12 @@ export default function Skills() {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white overflow-x-hidden">
-      <Navbar />
-
       <div className="w-full flex flex-col items-center p-8">
         {/* Title Section */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16 mt-12"
         >
@@ -88,17 +86,28 @@ export default function Skills() {
             <motion.div
               key={catIndex}
               initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: catIndex * 0.3 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: catIndex * 0.2 }}
               className="w-full"
             >
-              <h2 className="text-3xl font-semibold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
+              <motion.h2 
+                className="text-3xl font-semibold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
                 {category.title}
-              </h2>
+              </motion.h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 place-items-center">
                 {category.skills.map((skill, index) => (
                   <motion.div
                     key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ scale: 1.08, rotate: 2 }}
                     whileTap={{ scale: 0.95 }}
                     className="group relative p-[2px] rounded-2xl bg-gradient-to-br from-cyan-500/40 via-purple-500/40 to-pink-500/40 shadow-lg hover:shadow-cyan-500/30 transition-all"
@@ -123,8 +132,9 @@ export default function Skills() {
         {/* Education Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="w-full max-w-5xl mt-24 mb-16 px-6"
         >
           <div className="relative bg-gray-900/60 backdrop-blur-lg p-10 rounded-3xl border border-white/10 hover:border-cyan-400/30 transition-all shadow-2xl">

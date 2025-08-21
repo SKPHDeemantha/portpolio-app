@@ -172,24 +172,49 @@ const Homepage = () => {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
+      <motion.section 
+        id="about" 
+        className="py-20 bg-gradient-to-br from-gray-800 to-gray-900"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <AboutMe />
-      </section>
+      </motion.section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+      <motion.section 
+        id="skills" 
+        className="py-20 bg-gradient-to-br from-gray-900 to-gray-800"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <Skills />
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
+      <motion.section 
+        id="projects" 
+        className="py-20 bg-gradient-to-br from-gray-800 to-gray-900"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <MyProjects />
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section
+      <motion.section
         id="contact"
         className="min-h-screen py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
       >
         <ContactMe />
         <motion.div
@@ -207,7 +232,7 @@ const Homepage = () => {
             <RiArrowRightDoubleLine className="ml-2 rotate-90" />
           </button>
         </motion.div>
-      </section>
+      </motion.section>
     </div>
   );
 };

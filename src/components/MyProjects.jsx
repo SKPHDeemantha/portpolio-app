@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "./Navbar";
 import ProjectCard from "./ProjectCard";
 
 export default function MyProjects() {
@@ -47,7 +46,7 @@ export default function MyProjects() {
       id: 4,
       title: "Weather Dashboard",
       description: "Interactive weather dashboard with location-based forecasts and beautiful data visualizations.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400",
+      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w-400",
       techStack: ["React", "OpenWeather API", "Chart.js"],
       features: ["Location Detection", "5-Day Forecast", "Data Visualization"],
       github: "https://github.com/SKPHDeemantha/weather-dashboard",
@@ -68,18 +67,17 @@ export default function MyProjects() {
       category: "fullstack"
     },
     {
-  id: 6,
-  title: "Telegram-Bot",
-  description: "A custom Telegram bot built to automate tasks, provide quick responses, and enhance user interaction through real-time messaging.",
-  image: "https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/sign/portfolioImages/2106.i201.007.F.m004.c9.call%20center%20technical%20support%20isometric.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MDE4ODI4YS1hNzMwLTQ2Y2MtOGRmNS1hMDI3MWU3NDVjZDUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwb3J0Zm9saW9JbWFnZXMvMjEwNi5pMjAxLjAwNy5GLm0wMDQuYzkuY2FsbCBjZW50ZXIgdGVjaG5pY2FsIHN1cHBvcnQgaXNvbWV0cmljLmpwZyIsImlhdCI6MTc1NTc4NDQyNSwiZXhwIjoyMDcxMTQ0NDI1fQ.crsGxB9Tmczmsqj-_mktMhknum9NpMWbPZm8eixi_OY", 
-  techStack: ["Node.js", "Telegram Bot API", "Express"],
-  features: ["Automated Replies", "Command Handling", "Real-time Messaging"],
-  github: "https://github.com/SKPHDeemantha/telegram-bot",
-  demo: "https://t.me/YourBotUsername", 
-  year: "2023",
-  category: "backend"
-}
-
+      id: 6,
+      title: "Telegram-Bot",
+      description: "A custom Telegram bot built to automate tasks, provide quick responses, and enhance user interaction through real-time messaging.",
+      image: "https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/sign/portfolioImages/2106.i201.007.F.m004.c9.call%20center%20technical%20support%20isometric.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MDE4ODI4YS1hNzMwLTQ2Y2MtOGRmNS1hMDI3MWU3NDVjZDUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwb3R0Zm9saW9JbWFnZXMvMjEwNi5pMjAxLjAwNy5GLm0wMDQuYzkuY2FsbCBjZW50ZXIgdGVjaG5pY2FsIHN1cHBvcnQgaXNvbWV0cmljLmpwZyIsImlhdCI6MTc1NTc4NDQyNSwiZXhwIjoyMDcxMTQ0NDI1fQ.crsGxB9Tmczmsqj-_mktMhknum9NpMWbPZm8eixi_OY", 
+      techStack: ["Node.js", "Telegram Bot API", "Express"],
+      features: ["Automated Replies", "Command Handling", "Real-time Messaging"],
+      github: "https://github.com/SKPHDeemantha/telegram-bot",
+      demo: "https://t.me/YourBotUsername", 
+      year: "2023",
+      category: "backend"
+    }
   ];
 
   const filters = [
@@ -94,13 +92,12 @@ export default function MyProjects() {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <Navbar />
-      
       <div className="container mx-auto px-4 py-20">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
@@ -115,7 +112,8 @@ export default function MyProjects() {
         {/* Filter Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex justify-center gap-4 mb-12"
         >
@@ -145,7 +143,8 @@ export default function MyProjects() {
                 key={project.id}
                 layout
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.3 }}
               >

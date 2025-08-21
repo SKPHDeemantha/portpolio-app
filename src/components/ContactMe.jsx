@@ -5,7 +5,6 @@ import { SiWhatsapp } from "react-icons/si";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { IoIosMailUnread } from "react-icons/io";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import Navbar from "./Navbar";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -48,14 +47,14 @@ export default function ContactMe() {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
-      <Navbar />
       <Toaster position="top-right" reverseOrder={false} />
 
       <div className="flex flex-col items-center px-6 py-16 md:py-20">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
@@ -63,7 +62,7 @@ export default function ContactMe() {
             Let's Connect
           </h1>
           <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
-            I’m always open to discussing new projects, creative ideas, or
+            I'm always open to discussing new projects, creative ideas, or
             opportunities to be part of your vision.
           </p>
         </motion.div>
@@ -73,7 +72,8 @@ export default function ContactMe() {
           ref={form}
           onSubmit={sendEmail}
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
           className="bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl rounded-2xl p-8 max-w-xl w-full mb-12"
         >
@@ -119,7 +119,8 @@ export default function ContactMe() {
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full"
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
           variants={{
             hidden: { opacity: 0 },
             visible: {
@@ -178,15 +179,16 @@ export default function ContactMe() {
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.5, duration: 0.6 }}
           className="mt-16"
         >
           <Link to="/">
-            <button className="flex items-center space-x-2 bg-gradient-to-r from-gray-600 to-gray-700 px-6 py-3 rounded-full hover:scale-105 transition transform duration-300 text-white shadow-md">
+            {/* <button className="flex items-center space-x-2 bg-gradient-to-r from-gray-600 to-gray-700 px-6 py-3 rounded-full hover:scale-105 transition transform duration-300 text-white shadow-md">
               <MdKeyboardDoubleArrowLeft className="text-xl" />
               <span>Back to Home</span>
-            </button>
+            </button> */}
           </Link>
         </motion.div>
       </div>
