@@ -11,11 +11,11 @@ export default function MyProjects() {
       id: 1,
       title: "E-Commerce Platform",
       description: "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400",
+      image: "https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images/1738522648648EditPage.jpg,EditPage.jpg",
       techStack: ["React", "Node.js", "MongoDB", "Stripe"],
       features: ["User Authentication", "Payment Processing", "Admin Dashboard"],
       github: "https://github.com/SKPHDeemantha/ecommerce-platform",
-      demo: "https://your-ecommerce-demo.netlify.app",
+      demo: "https://velvetglow2025.netlify.app/",
       year: "2024",
       category: "fullstack"
     },
@@ -33,8 +33,8 @@ export default function MyProjects() {
     },
     {
       id: 3,
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates using Socket.io and Express.",
+      title: "Ticket Booking System",
+      description: "Collaborative ticket booking application with real-time updates using Socket.io and Express.",
       image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400",
       techStack: ["React", "Socket.io", "Express", "PostgreSQL"],
       features: ["Real-time Updates", "Team Collaboration", "Drag & Drop"],
@@ -68,17 +68,18 @@ export default function MyProjects() {
       category: "fullstack"
     },
     {
-      id: 6,
-      title: "Recipe Finder",
-      description: "Recipe discovery platform with search functionality, favorites, and meal planning features.",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400",
-      techStack: ["React", "Spoonacular API", "Local Storage"],
-      features: ["Recipe Search", "Favorites", "Meal Planning"],
-      github: "https://github.com/SKPHDeemantha/recipe-finder",
-      demo: "https://your-recipe-app.netlify.app",
-      year: "2023",
-      category: "frontend"
-    }
+  id: 6,
+  title: "Telegram-Bot",
+  description: "A custom Telegram bot built to automate tasks, provide quick responses, and enhance user interaction through real-time messaging.",
+  image: "https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/sign/portfolioImages/2106.i201.007.F.m004.c9.call%20center%20technical%20support%20isometric.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MDE4ODI4YS1hNzMwLTQ2Y2MtOGRmNS1hMDI3MWU3NDVjZDUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwb3J0Zm9saW9JbWFnZXMvMjEwNi5pMjAxLjAwNy5GLm0wMDQuYzkuY2FsbCBjZW50ZXIgdGVjaG5pY2FsIHN1cHBvcnQgaXNvbWV0cmljLmpwZyIsImlhdCI6MTc1NTc4NDQyNSwiZXhwIjoyMDcxMTQ0NDI1fQ.crsGxB9Tmczmsqj-_mktMhknum9NpMWbPZm8eixi_OY", 
+  techStack: ["Node.js", "Telegram Bot API", "Express"],
+  features: ["Automated Replies", "Command Handling", "Real-time Messaging"],
+  github: "https://github.com/SKPHDeemantha/telegram-bot",
+  demo: "https://t.me/YourBotUsername", 
+  year: "2023",
+  category: "backend"
+}
+
   ];
 
   const filters = [
