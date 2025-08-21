@@ -1,7 +1,8 @@
 // src/components/Navbar.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaDownload, FaSpinner, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
+import ResumeGenerator from '../utils/resumeGenerator';
 
 const Navbar = ({ activeSection, scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,12 +25,76 @@ const Navbar = ({ activeSection, scrollToSection }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleResumeDownload = () => {
-    // Create a download link for resume
-    const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Update with actual resume path
-    link.download = 'Heshan_Deemantha_Resume.pdf';
-    link.click();
+  const [downloadStatus, setDownloadStatus] = useState('idle'); // idle, loading, success, error
+  const resumeGeneratorRef = useRef(new ResumeGenerator());
+
+  const handleResumeDownload = async () => {
+    setDownloadStatus('loading');
+    
+    try {
+      const success = await resumeGeneratorRef.current.downloadResume();
+      
+      if (success) {
+        setDownloadStatus('success');
+        // Reset status after 2 seconds
+        setTimeout(() => setDownloadStatus('idle'), 2000);
+      } else {
+        setDownloadStatus('error');
+        setTimeout(() => setDownloadStatus('idle'), 3000);
+      }
+    } catch (error) {
+      console.error('Resume download error:', error);
+      setDownloadStatus('error');
+      setTimeout(() => setDownloadStatus('idle'), 3000);
+    }
+  };
+
+  const getDownloadButtonContent = () => {
+    switch (downloadStatus) {
+      case 'loading':
+        return (
+          <>
+            <FaSpinner className="text-sm animate-spin" />
+            <span>Generating...</span>
+          </>
+        );
+      case 'success':
+        return (
+          <>
+            <FaCheckCircle className="text-sm" />
+            <span>Downloaded!</span>
+          </>
+        );
+      case 'error':
+        return (
+          <>
+            <FaExclamationTriangle className="text-sm" />
+            <span>Try Again</span>
+          </>
+        );
+      default:
+        return (
+          <>
+            <FaDownload className="text-sm" />
+            <span>Resume</span>
+          </>
+        );
+    }
+  };
+
+  const getButtonClass = () => {
+    const baseClass = "flex items-center space-x-2 px-4 py-2 rounded-full font-medium transition-all duration-300";
+    
+    switch (downloadStatus) {
+      case 'loading':
+        return `${baseClass} bg-blue-500 text-white cursor-not-allowed`;
+      case 'success':
+        return `${baseClass} bg-green-500 text-white hover:shadow-green-500/25`;
+      case 'error':
+        return `${baseClass} bg-red-500 text-white hover:shadow-red-500/25`;
+      default:
+        return `${baseClass} bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:shadow-lg hover:shadow-cyan-500/25`;
+    }
   };
 
   return (
@@ -109,12 +174,12 @@ const Navbar = ({ activeSection, scrollToSection }) => {
             </motion.a>
             <motion.button
               onClick={handleResumeDownload}
-              className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className={getButtonClass()}
+              whileHover={downloadStatus === 'idle' ? { scale: 1.05 } : {}}
+              whileTap={downloadStatus === 'idle' ? { scale: 0.95 } : {}}
+              disabled={downloadStatus === 'loading'}
             >
-              <FaDownload className="text-sm" />
-              <span>Resume</span>
+              {getDownloadButtonContent()}
             </motion.button>
           </div>
 
@@ -191,10 +256,31 @@ const Navbar = ({ activeSection, scrollToSection }) => {
                 </div>
                 <button
                   onClick={handleResumeDownload}
-                  className="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium"
+                  className={`w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                    downloadStatus === 'loading' 
+                      ? 'bg-blue-500 text-white cursor-not-allowed' 
+                      : downloadStatus === 'success'
+                      ? 'bg-green-500 text-white'
+                      : downloadStatus === 'error'
+                      ? 'bg-red-500 text-white'
+                      : 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                  }`}
+                  disabled={downloadStatus === 'loading'}
                 >
-                  <FaDownload className="text-sm" />
-                  <span>Download Resume</span>
+                  {downloadStatus === 'loading' ? (
+                    <FaSpinner className="text-sm animate-spin" />
+                  ) : downloadStatus === 'success' ? (
+                    <FaCheckCircle className="text-sm" />
+                  ) : downloadStatus === 'error' ? (
+                    <FaExclamationTriangle className="text-sm" />
+                  ) : (
+                    <FaDownload className="text-sm" />
+                  )}
+                  <span>
+                    {downloadStatus === 'loading' ? 'Generating...' :
+                     downloadStatus === 'success' ? 'Downloaded!' :
+                     downloadStatus === 'error' ? 'Try Again' : 'Download Resume'}
+                  </span>
                 </button>
               </div>
             </div>
