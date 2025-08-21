@@ -59,7 +59,7 @@ export default function ContactMe() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500 mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-600 mb-4">
             Let's Connect
           </h1>
           <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
@@ -109,7 +109,7 @@ export default function ContactMe() {
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-90 px-6 py-3 rounded-lg font-semibold transition duration-300"
+            className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 px-6 py-3 rounded-lg font-semibold transition duration-300"
           >
             Send Message
           </button>
