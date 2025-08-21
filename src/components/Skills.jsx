@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, stagger } from "framer-motion";
+import { motion } from "framer-motion";
 import StackIcon from "tech-stack-icons";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
@@ -11,20 +11,46 @@ export default function Skills() {
     setTimeout(() => setLoadingStatus("loaded"), 800);
   }, []);
 
-  const skills = [
-    { name: "HTML5", icon: "html5", color: "#E34F26" },
-    { name: "CSS3", icon: "css3", color: "#1572B6" },
-    { name: "Tailwind CSS", icon: "tailwindcss", color: "#06B6D4" },
-    { name: "ReactJS", icon: "reactjs", color: "#61DAFB" },
-    { name: "MySQL", icon: "mysql", color: "#4479A1" },
-    { name: "MongoDB", icon: "mongodb", color: "#47A248" },
-    { name: "JavaScript", icon: "js", color: "#F7DF1E" },
-    { name: "Java", icon: "java", color: "#007396" },
+  const skillCategories = [
+    {
+      title: "Frontend Development",
+      skills: [
+        { name: "HTML5", icon: "html5", color: "#E34F26" },
+        { name: "CSS3", icon: "css3", color: "#1572B6" },
+        { name: "JavaScript", icon: "js", color: "#F7DF1E" },
+        { name: "ReactJS", icon: "reactjs", color: "#61DAFB" },
+        { name: "Next.js", icon: "nextjs", color: "#000000" },
+        { name: "Tailwind CSS", icon: "tailwindcss", color: "#06B6D4" },
+      ],
+    },
+    {
+      title: "Backend Development",
+      skills: [
+        { name: "Node.js", icon: "nodejs", color: "#3C873A" },
+        { name: "Express.js", icon: "express", color: "#FFFFFF" },
+        { name: "Java", icon: "java", color: "#007396" },
+      ],
+    },
+    {
+      title: "Databases",
+      skills: [
+        { name: "MySQL", icon: "mysql", color: "#4479A1" },
+        { name: "MongoDB", icon: "mongodb", color: "#47A248" },
+      ],
+    },
+    {
+      title: "Cloud & Tools",
+      skills: [
+        { name: "AWS", icon: "aws", color: "#FF9900" },
+        { name: "Postman", icon: "postman", color: "#FF6C37" },
+        { name: "GitHub", icon: "github", color: "#ffffff" },
+      ],
+    },
   ];
 
   if (loadingStatus === "loading") {
     return (
-      <div className="flex justify-center items-center min-h-screen bg-gray-900">
+      <div className="flex justify-center items-center min-h-screen bg-gray-950">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
@@ -37,10 +63,10 @@ export default function Skills() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 overflow-x-hidden">
+    <div className="w-full min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white overflow-x-hidden">
       <Navbar />
 
-      <div className="w-full flex flex-col items-center p-8 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="w-full flex flex-col items-center p-8">
         {/* Title Section */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -48,92 +74,68 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 mt-12"
         >
-          <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mb-4">
             Technical Expertise
           </h1>
-          <p className="text-gray-300 text-lg md:text-xl max-w-2xl">
-            Technologies I've mastered and continuously work with
+          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+            A versatile Fullstack + Cloud Engineer skilled in crafting modern, scalable, and secure applications.
           </p>
         </motion.div>
 
-        {/* Skills Grid */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl px-4"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                delayChildren: 0.3,
-                staggerChildren: 0.1,
-              },
-            },
-          }}
-        >
-          {skills.map((skill, index) => (
+        {/* Skill Categories */}
+        <div className="space-y-16 w-full max-w-7xl">
+          {skillCategories.map((category, catIndex) => (
             <motion.div
-              key={index}
-              variants={{
-                hidden: { opacity: 0, scale: 0.8 },
-                visible: { opacity: 1, scale: 1 },
-              }}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative p-1 rounded-2xl bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 shadow-xl hover:shadow-2xl transition-shadow"
-              style={{
-                boxShadow: `0 4px 24px -2px ${skill.color}40`,
-              }}
+              key={catIndex}
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: catIndex * 0.3 }}
+              className="w-full"
             >
-              <div className="flex flex-col items-center justify-center bg-gray-800/90 backdrop-blur-sm p-6 rounded-xl space-y-4 border border-white/5 hover:border-white/10 transition-all">
-                <StackIcon
-                  name={skill.icon}
-                  className="text-6xl transition-transform duration-300 group-hover:scale-110"
-                  style={{ color: skill.color }}
-                />
-                <p className="text-xl font-medium text-gray-100">
-                  {skill.name}
-                </p>
+              <h2 className="text-3xl font-semibold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
+                {category.title}
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 place-items-center">
+                {category.skills.map((skill, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.08, rotate: 2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group relative p-[2px] rounded-2xl bg-gradient-to-br from-cyan-500/40 via-purple-500/40 to-pink-500/40 shadow-lg hover:shadow-cyan-500/30 transition-all"
+                  >
+                    <div className="flex flex-col items-center justify-center bg-gray-900/80 backdrop-blur-sm p-6 rounded-xl space-y-4 border border-white/10 group-hover:border-cyan-400/40 transition-all">
+                      <StackIcon
+                        name={skill.icon}
+                        className="text-6xl transition-transform duration-300 group-hover:scale-110"
+                        style={{ color: skill.color }}
+                      />
+                      <p className="text-lg font-medium text-gray-200">
+                        {skill.name}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Education Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="w-full max-w-4xl mt-20 mb-12 px-4"
+          transition={{ duration: 0.8, delay: 1 }}
+          className="w-full max-w-5xl mt-24 mb-16 px-6"
         >
-          <div className="relative bg-gray-800/50 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-white/20 transition-all shadow-2xl">
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500/20 to-blue-600/20 blur-lg" />
-            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 mb-6">
+          <div className="relative bg-gray-900/60 backdrop-blur-lg p-10 rounded-3xl border border-white/10 hover:border-cyan-400/30 transition-all shadow-2xl">
+            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500/20 to-purple-600/20 blur-lg" />
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 mb-8 relative">
               Academic Journey
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-8 relative">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 p-3 bg-cyan-500/10 rounded-lg">
-                  <svg
-                    className="w-6 h-6 text-cyan-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 14l9-5-9-5-9 5 9 5z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                    />
-                  </svg>
+                  🎓
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-100 mb-2">
@@ -149,19 +151,7 @@ export default function Skills() {
 
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 p-3 bg-purple-500/10 rounded-lg">
-                  <svg
-                    className="w-6 h-6 text-purple-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    />
-                  </svg>
+                  📘
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-100 mb-2">
@@ -175,10 +165,11 @@ export default function Skills() {
                 </div>
               </div>
 
-              <div className="mt-8 flex items-center space-x-3">
+              <div className="mt-10 flex justify-center">
                 <Link
                   to="https://github.com/SKPHDeemantha"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-medium hover:scale-[1.02] transition-transform hover:cursor-auto"
+                  target="_blank"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg font-medium hover:scale-[1.05] transition-transform"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
