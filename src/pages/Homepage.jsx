@@ -114,14 +114,39 @@ const Homepage = () => {
             </div>
           </motion.div>
 
-          {/* Profile */}
+          {/* Profile with Particles */}
           <motion.div
-            className="flex-1 flex justify-center"
+            className="flex-1 flex justify-center relative"
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative">
+            {/* Floating Particles */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {[...Array(25)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-3 h-3 bg-blue-400/40 rounded-full"
+                  initial={{
+                    x: Math.random() * window.innerWidth,
+                    y: Math.random() * window.innerHeight,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    y: [null, Math.random() * -120 - 60],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: Math.random() * 3 + 2,
+                    repeat: Infinity,
+                    delay: Math.random() * 2,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Profile Image */}
+            <div className="relative z-10">
               <div className="w-72 h-72 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 p-2">
                 <img
                   src="https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images//My%20photo.jpg"
