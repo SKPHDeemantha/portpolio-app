@@ -92,44 +92,54 @@ class ResumeGenerator {
 
   // HTML Structure
   getResumeHTML() {
+    // Defensive checks to avoid undefined errors
+    const personalInfo = resumeData.personalInfo || {};
+    const summary = resumeData.summary || "";
+    const skills = resumeData.skills || { technical: [], tools: [] };
+    const experience = resumeData.experience || [];
+    const education = resumeData.education || [];
+    const projects = resumeData.projects || [];
+    const certifications = resumeData.certifications || [];
+    const lastUpdated = resumeData.lastUpdated || "";
+
     return `
       <div>
         <!-- Header -->
         <div class="resume-header">
-          <h1>${resumeData.personalInfo.name}</h1>
-          <h2>${resumeData.personalInfo.title}</h2>
+          <h1>${personalInfo.name || ""}</h1>
+          <h2>${personalInfo.title || ""}</h2>
           <div class="resume-subtitle">
-            ${resumeData.personalInfo.email} • ${resumeData.personalInfo.phone} • ${resumeData.personalInfo.location}<br>
-            ${resumeData.personalInfo.linkedin} • ${resumeData.personalInfo.github} • ${resumeData.personalInfo.portfolio}
+            ${personalInfo.email || ""} • ${personalInfo.phone || ""} • ${personalInfo.location || ""}<br>
+            ${personalInfo.linkedin || ""} • ${personalInfo.github || ""} • ${personalInfo.portfolio || ""}
           </div>
         </div>
 
         <!-- Summary -->
         <div class="section">
           <h3>Professional Summary</h3>
-          <p>${resumeData.summary}</p>
+          <p>${summary}</p>
         </div>
 
         <!-- Skills -->
         <div class="section">
           <h3>Technical Skills</h3>
           <div>
-            ${resumeData.skills.technical.map(skill => `<span class="skills-badge">${skill}</span>`).join("")}
+            ${(skills.technical || []).map(skill => `<span class="skills-badge">${skill}</span>`).join("")}
           </div>
-          <div class="tools"><strong>Tools:</strong> ${resumeData.skills.tools.join(", ")}</div>
+          <div class="tools"><strong>Tools:</strong> ${(skills.tools || []).join(", ")}</div>
         </div>
 
         <!-- Experience -->
         <div class="section">
           <h3>Professional Experience</h3>
-          ${resumeData.experience.map(exp => `
+          ${experience.map(exp => `
             <div>
               <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                <h4>${exp.position}</h4>
-                <span class="resume-subtitle">${exp.duration}</span>
+                <h4>${exp.position || ""}</h4>
+                <span class="resume-subtitle">${exp.duration || ""}</span>
               </div>
-              <div style="color:#3182ce; font-weight:500; margin-bottom:4px;">${exp.company} • ${exp.location}</div>
-              <ul>${exp.achievements.map(a => `<li>${a}</li>`).join("")}</ul>
+              <div style="color:#3182ce; font-weight:500; margin-bottom:4px;">${exp.company || ""} • ${exp.location || ""}</div>
+              <ul>${(exp.achievements || []).map(a => `<li>${a}</li>`).join("")}</ul>
             </div>
           `).join("")}
         </div>
@@ -137,15 +147,15 @@ class ResumeGenerator {
         <!-- Education -->
         <div class="section">
           <h3>Education</h3>
-          ${resumeData.education.map(edu => `
+          ${education.map(edu => `
             <div>
               <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                <h4>${edu.degree}</h4>
-                <span class="resume-subtitle">${edu.duration}</span>
+                <h4>${edu.degree || ""}</h4>
+                <span class="resume-subtitle">${edu.duration || ""}</span>
               </div>
-              <div style="color:#3182ce; font-weight:500;">${edu.institution} • ${edu.location}</div>
-              <div>GPA: ${edu.gpa}</div>
-              <ul>${edu.achievements.map(a => `<li>${a}</li>`).join("")}</ul>
+              <div style="color:#3182ce; font-weight:500;">${edu.institution || ""} • ${edu.location || ""}</div>
+              <div>GPA: ${edu.gpa || ""}</div>
+              <ul>${(edu.achievements || []).map(a => `<li>${a}</li>`).join("")}</ul>
             </div>
           `).join("")}
         </div>
@@ -153,12 +163,12 @@ class ResumeGenerator {
         <!-- Projects -->
         <div class="section">
           <h3>Projects</h3>
-          ${resumeData.projects.map(project => `
+          ${projects.map(project => `
             <div>
-              <h4>${project.name}</h4>
-              <p>${project.description}</p>
-              <div>${project.technologies.map(tech => `<span class="project-tech">${tech}</span>`).join("")}</div>
-              <div class="resume-subtitle">GitHub: ${project.github} | Live: ${project.live}</div>
+              <h4>${project.name || ""}</h4>
+              <p>${project.description || ""}</p>
+              <div>${(project.technologies || []).map(tech => `<span class="project-tech">${tech}</span>`).join("")}</div>
+              <div class="resume-subtitle">GitHub: ${project.github || ""} | Live: ${project.live || ""}</div>
             </div>
           `).join("")}
         </div>
@@ -166,17 +176,17 @@ class ResumeGenerator {
         <!-- Certifications -->
         <div class="section">
           <h3>Certifications</h3>
-          ${resumeData.certifications.map(cert => `
+          ${certifications.map(cert => `
             <div class="cert">
-              <div><strong>${cert.name}</strong></div>
-              <div class="resume-subtitle">${cert.issuer} • ${cert.date} • ${cert.credential}</div>
+              <div><strong>${cert.name || ""}</strong></div>
+              <div class="resume-subtitle">${cert.issuer || ""} • ${cert.date || ""} • ${cert.credential || ""}</div>
             </div>
           `).join("")}
         </div>
 
         <!-- Footer -->
         <div class="resume-footer">
-          Last updated: ${resumeData.lastUpdated} | Generated from portfolio
+          Last updated: ${lastUpdated} | Generated from portfolio
         </div>
       </div>
     `;

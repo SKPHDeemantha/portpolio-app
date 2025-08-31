@@ -30,18 +30,12 @@ const Navbar = ({ activeSection, scrollToSection }) => {
 
   const handleResumeDownload = async () => {
     setDownloadStatus('loading');
-    
+
     try {
-      const success = await resumeGeneratorRef.current.downloadResume();
-      
-      if (success) {
-        setDownloadStatus('success');
-        // Reset status after 2 seconds
-        setTimeout(() => setDownloadStatus('idle'), 2000);
-      } else {
-        setDownloadStatus('error');
-        setTimeout(() => setDownloadStatus('idle'), 3000);
-      }
+      await resumeGeneratorRef.current.downloadResume();
+      setDownloadStatus('success');
+      // Reset status after 2 seconds
+      setTimeout(() => setDownloadStatus('idle'), 2000);
     } catch (error) {
       console.error('Resume download error:', error);
       setDownloadStatus('error');

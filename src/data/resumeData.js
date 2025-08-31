@@ -61,8 +61,14 @@ export const resumeData = {
     {
       degree: "BSc in Software Engineering",
       institution: "University of Sabaragamuwa",
-      duration: "2024 Present",
-      location: "Colombo, Sri Lanka"
+      duration: "2024 - Present",
+      location: "Colombo, Sri Lanka",
+      gpa: "3.8",
+      achievements: [
+        "Dean's List for academic excellence",
+        "Active member of Computer Science Society",
+        "Completed internship in software development"
+      ]
     }
   ],
 
@@ -118,11 +124,7 @@ export const resumeData = {
     { language: "Tamil", proficiency: "Intermediate" }
   ],
 
-  lastUpdated: new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
+  lastUpdated: "December 2024"
 };
 
 export default resumeData;
