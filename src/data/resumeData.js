@@ -59,16 +59,10 @@ export const resumeData = {
 
   education: [
     {
-      degree: "BSc in Computer Science",
-      institution: "University of Colombo",
-      duration: "2018 - 2022",
-      location: "Colombo, Sri Lanka",
-      gpa: "3.8/4.0",
-      achievements: [
-        "Dean's List for academic excellence",
-        "President of Computer Science Society",
-        "Best Final Year Project Award"
-      ]
+      degree: "BSc in Software Engineering",
+      institution: "University of Sabaragamuwa",
+      duration: "2024 Present",
+      location: "Colombo, Sri Lanka"
     }
   ],
 
