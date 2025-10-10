@@ -2,7 +2,7 @@
 export const resumeData = {
   personalInfo: {
     name: "Heshan Deemantha",
-    title: "BackEnd Developer & Cloud Enginner",
+    title: "Full-Stack Developer & Cloud Enginner",
     email: "heshandeemantha90@gmail.com",
     phone: "+94 776171219",
     location: "Colombo, Sri Lanka",
@@ -164,6 +164,15 @@ projects: [
     { language: "English", proficiency: "Fluent" },
     { language: "Sinhala", proficiency: "Native" },
     { language: "Tamil", proficiency: "Intermediate" }
+  ],
+
+  references: [
+    {
+      name: "Mrs. Kamani Gunathilaka",
+      position: "Head of IT Department",
+      company: "Raigam Marketing Service",
+      contact: "+94 772 366 006"
+    }
   ],
 
   lastUpdated: "October 2025"

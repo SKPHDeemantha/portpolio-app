@@ -28,20 +28,16 @@ class ResumeGenerator {
       });
 
       const imgWidth = 210; // A4 width
-      const pageHeight = 297;  // A4 hieght
+      const pageHeight = 297;  // A4 height
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-      let heightLeft = imgHeight;
-      let position = 0;
+      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+      let yOffset = pageHeight;
 
-      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-
-      while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
+      while (yOffset < imgHeight) {
         pdf.addPage();
-        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
+        pdf.addImage(imgData, "PNG", 0, -yOffset, imgWidth, imgHeight);
+        yOffset += pageHeight;
       }
 
       return pdf;
@@ -64,6 +60,7 @@ class ResumeGenerator {
         width: 210mm;
         min-height: 297mm;
         padding: 20mm;
+        margin-bottom: 20mm;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: #ffffff;
         color: #333333;
@@ -142,6 +139,10 @@ class ResumeGenerator {
         font-size: 13px;
         color: #ecf0f1;
       }
+
+      .main-section .contact-item {
+        color: #7f8c8d;
+      }
       
       /* Skills Section */
       .skills-list {
@@ -165,13 +166,13 @@ class ResumeGenerator {
       }
       
       /* Experience & Education Blocks */
-      .experience-block, .education-block, .project-block {
+      .experience-block, .education-block, .project-block, .reference-block {
         margin-bottom: 20px;
         padding-bottom: 15px;
         border-bottom: 1px solid #ecf0f1;
       }
 
-      .experience-block:last-child, .education-block:last-child, .project-block:last-child {
+      .experience-block:last-child, .education-block:last-child, .project-block:last-child, .reference-block:last-child {
         border-bottom: none;
       }
       
@@ -280,24 +281,24 @@ class ResumeGenerator {
   // Generate HTML with layout matching the screenshot
   getResumeHTML() {
     // Using the data structure from your resumeData
-    const { personalInfo, summary, skills, experience, education, certifications, languages } = resumeData;
+    const { personalInfo, summary, skills, experience, education, certifications, languages, references } = resumeData;
 
     return `
       <div style="display:flex; width:100%; height:100%;">
         <!-- Left Sidebar -->
         <div class="sidebar">
           <div class="resume-header">
-            <h1>${personalInfo.name || "Ashley Moore"}</h1>
-            <h2>${personalInfo.title || "Retail Store Manager"}</h2>
+            <h1>${personalInfo.name || "Heshan Deemantha"}</h1>
+            <h2>${personalInfo.title || "Full-Stack Developer & Cloud Engineer"}</h2>
           </div>
 
           <!-- Contact Information -->
           <div class="section">
             <h3 class="section-title">Contact</h3>
             <div class="contact-info">
-              <div class="contact-item">${personalInfo.email || "ashley.moore@example.com"}</div>
-              <div class="contact-item">${personalInfo.phone || "(123) 456-7890"}</div>
-              <div class="contact-item">${personalInfo.location || "New York, NY"}</div>
+              <div class="contact-item">${personalInfo.email || "heshandeemantha99@gmail.com"}</div>
+              <div class="contact-item">${personalInfo.phone || "+94 776171219"}</div>
+              <div class="contact-item">${personalInfo.location || "Colombo,Sri Lnka"}</div>
               ${personalInfo.linkedin ? `<div class="contact-item">${personalInfo.linkedin}</div>` : ''}
               ${personalInfo.github ? `<div class="contact-item">${personalInfo.github}</div>` : ''}
             </div>
@@ -448,10 +449,19 @@ class ResumeGenerator {
           </div>
 
           <!-- References -->
-           <div class="section">
-             <h3 class="section-title">References</h3>
-           <p class="references">Available upon request</p>
-           </div>
+          <div class="section">
+            <h3 class="section-title">References</h3>
+            ${(references && references.length > 0 ? references.map(ref => `
+              <div class="reference-block">
+                <div class="job-title">${ref.name}</div>
+                <div class="company">${ref.position}</div>
+                <div class="company">${ref.company}</div>
+                <div class="contact-item">Contact: ${ref.contact}</div>
+              </div>
+            `).join("") : `
+              <p class="references">References available upon request.</p>
+            `)}
+          </div>
         </div>
       </div>
     `;
