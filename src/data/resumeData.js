@@ -18,29 +18,29 @@ export const resumeData = {
       "JavaScript (ES6+)", "React.js", "Node.js", "Express.js", 
       "MongoDB", "HTML5/CSS3", "Tailwind CSS", 
       "Git/GitHub", "REST APIs", "GraphQL", "TypeScript",
-      "Python", "Django", "Firebase", "AWS Services"
+      "Python","Java", "Superbase", "AWS Services"
     ],
     soft: [
       "Problem Solving", "Team Collaboration", "Agile Methodology",
       "Communication", "Time Management", "Creative Thinking"
     ],
     tools: [
-      "VS Code", "Figma", "Postman", "Docker", 
-      "Webpack", "Vite"
+      "VS Code", "Figma", "Postman", 
+       "Vite"
     ]
   },
 
   experience: [
   {
-    position: "Backend Developer",
+    position: "Full-Stack Developer & Cloud Engineer",
     company: "Tech Innovations Ltd.",
-    duration: "2022 - Present",
+    duration: "2025 - Present",
     location: "Colombo, Sri Lanka",
     achievements: [
       "Developed and maintained 10+ scalable backend services using Node.js and Express",
       "Optimized database queries (MySQL/MongoDB) improving API response times by 40%",
-      "Led a team of 3 developers on a major e-commerce backend integration project",
-      "Implemented CI/CD pipelines reducing deployment time by 60%"
+      "Led a team of 5 developers on a major ERP solution backend integration project",
+     
     ]
   },
   {
@@ -63,11 +63,11 @@ export const resumeData = {
       institution: "University of Sabaragamuwa",
       duration: "2024 - Present",
       location: "Colombo, Sri Lanka",
-      gpa: "3.8",
+      // gpa: "3.8",
       achievements: [
-        "Dean's List for academic excellence",
+        // "Dean's List for academic excellence",
         "Active member of Computer Science Society",
-        "Completed internship in software development"
+        "Completed internship in Raigam Macketing Service As a System operator."
       ]
     }
   ],
@@ -76,7 +76,7 @@ export const resumeData = {
     {
       name: "E-Commerce Platform",
       description: "Full-stack e-commerce solution with React, Node.js, and MongoDB",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
+      technologies: ["React", "Node.js", "MongoDB", "Express.js", "JWT"],
       features: [
         "User authentication & authorization",
         "Product catalog with search & filters",
@@ -84,8 +84,8 @@ export const resumeData = {
         "Order management system",
         "Admin dashboard"
       ],
-      github: "github.com/SKPHDeemantha/ecommerce-platform",
-      live: "ecommerce-demo.heshan.com"
+      github: "https://github.com/SKPHDeemantha/E-platformFrontend",
+      live: "https://velvetglow2025.netlify.app/"
     },
     {
       name: "Portpolio ",
@@ -98,8 +98,35 @@ export const resumeData = {
         "Progress tracking",
         "Notifications system"
       ],
-      github: "github.com/SKPHDeemantha/task-manager",
-      live: "tasks.heshan.com"
+      github: "https://github.com/SKPHDeemantha/portpolio-app",
+      live: "https://main.dys9r09rupzse.amplifyapp.com/"
+    }
+    ,   {
+      name: "Ticket Booking System",
+      description: "Collaborative task management application with real-time updates",
+      technologies: ["React", "Socket.io"],
+      features: [
+        "Real-time collaboration",
+        "Drag & drop interface",
+        "Team management",
+        "Progress tracking",
+        "Notifications system"
+      ],
+      github: "https://github.com/SKPHDeemantha/TicketBookingSystem",
+      live: "still-building"
+    },   {
+      name: "Ballerina-Project",
+      description: "Collaborative task management application with real-time updates",
+      technologies: ["React", "Socket.io"],
+      features: [
+        "Real-time collaboration",
+        "Drag & drop interface",
+        "Team management",
+        "Progress tracking",
+        "Notifications system"
+      ],
+      github: "https://github.com/SKPHDeemantha/portpolio-app",
+      live: "https://main.dys9r09rupzse.amplifyapp.com/"
     }
   ],
 
@@ -107,7 +134,7 @@ export const resumeData = {
     {
       name: "AWS Certified Developer - Associate",
       issuer: "Amazon Web Services",
-      date: "2023",
+      date: "2025",
       credential: "AWS-DEV-12345"
     },
     {
@@ -124,7 +151,7 @@ export const resumeData = {
     { language: "Tamil", proficiency: "Intermediate" }
   ],
 
-  lastUpdated: "December 2024"
+  lastUpdated: "October 2025"
 };
 
 export default resumeData;
