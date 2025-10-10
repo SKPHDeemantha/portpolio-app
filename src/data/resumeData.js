@@ -72,63 +72,78 @@ export const resumeData = {
     }
   ],
 
-  projects: [
-    {
-      name: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and MongoDB",
-      technologies: ["React", "Node.js", "MongoDB", "Express.js", "JWT"],
-      features: [
-        "User authentication & authorization",
-        "Product catalog with search & filters",
-        "Shopping cart & checkout",
-        "Order management system",
-        "Admin dashboard"
-      ],
-      github: "https://github.com/SKPHDeemantha/E-platformFrontend",
-      live: "https://velvetglow2025.netlify.app/"
-    },
-    {
-      name: "Portpolio ",
-      description: "Collaborative task management application with real-time updates",
-      technologies: ["React", "Socket.io"],
-      features: [
-        "Real-time collaboration",
-        "Drag & drop interface",
-        "Team management",
-        "Progress tracking",
-        "Notifications system"
-      ],
-      github: "https://github.com/SKPHDeemantha/portpolio-app",
-      live: "https://main.dys9r09rupzse.amplifyapp.com/"
-    }
-    ,   {
-      name: "Ticket Booking System",
-      description: "Collaborative task management application with real-time updates",
-      technologies: ["React", "Socket.io"],
-      features: [
-        "Real-time collaboration",
-        "Drag & drop interface",
-        "Team management",
-        "Progress tracking",
-        "Notifications system"
-      ],
-      github: "https://github.com/SKPHDeemantha/TicketBookingSystem",
-      live: "still-building"
-    },   {
-      name: "Ballerina-Project",
-      description: "Collaborative task management application with real-time updates",
-      technologies: ["React", "Socket.io"],
-      features: [
-        "Real-time collaboration",
-        "Drag & drop interface",
-        "Team management",
-        "Progress tracking",
-        "Notifications system"
-      ],
-      github: "https://github.com/SKPHDeemantha/portpolio-app",
-      live: "https://main.dys9r09rupzse.amplifyapp.com/"
-    }
+projects: [
+  {
+    name: "E-Commerce Platform",
+    description:
+      "A complete full-stack e-commerce solution built using React, Node.js, and MongoDB. Designed with a modern UI/UX and optimized backend APIs to deliver a seamless shopping experience. Features secure authentication, dynamic product management, and integrated order tracking for customers and admins.",
+    technologies: ["React", "Node.js", "MongoDB", "Express.js", "JWT", "Tailwind CSS"],
+    features: [
+      "✅ Secure user authentication and JWT-based authorization",
+      "🛒 Dynamic product catalog with advanced search, filters, and sorting",
+      "💳 Integrated shopping cart and checkout with order validation",
+      "📦 Real-time order management and status tracking for customers",
+      "🧾 Admin dashboard for product, order, and user management",
+      "📱 Fully responsive design with optimized performance across devices"
+    ],
+    github: "https://github.com/SKPHDeemantha/E-platformFrontend",
+    live: "https://velvetglow2025.netlify.app/"
+  },
+
+  {
+    name: "Portfolio Website",
+    description:
+      "A personal portfolio website built with React and Tailwind CSS to showcase projects, skills, and experience in a visually stunning and interactive way. The site highlights my professional journey and technical expertise while maintaining high performance and modern UI transitions.",
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    features: [
+      "✨ Animated and responsive design using Framer Motion",
+      "🧠 Dynamic sections for About, Projects, Skills, and Contact",
+      "🚀 SEO-optimized and fast-loading pages using Vite",
+      "📩 Integrated contact form with email automation",
+      "🎨 Clean and modern layout aligned with professional branding",
+      "☁️ Hosted and deployed using AWS Amplify for global availability"
+    ],
+    github: "https://github.com/SKPHDeemantha/portpolio-app",
+    live: "https://main.dys9r09rupzse.amplifyapp.com/"
+  },
+
+  {
+    name: "Ticket Booking System",
+    description:
+      "A collaborative real-time ticket booking web application enabling users to search, reserve, and manage event tickets effortlessly. Built with React and Socket.io, it ensures live seat availability updates and instant synchronization across multiple users.",
+    technologies: ["React", "Socket.io", "Node.js", "Express.js", "MongoDB"],
+    features: [
+      "🎟️ Real-time seat availability updates using WebSockets",
+      "👥 Multi-user booking system with instant synchronization",
+      "🗂️ Interactive seat selection and reservation interface",
+      "📊 Booking management dashboard for users and admins",
+      "🔐 Secure payment simulation and transaction confirmation",
+      "💡 Optimized backend APIs for fast response and scalability"
+    ],
+    github: "https://github.com/SKPHDeemantha/TicketBookingSystem",
+    live: "still-building"
+  },
+
+{
+  name: "Ballerina Technical Support Assistant",
+  description:
+    "A smart technical support application that helps users troubleshoot and resolve issues on desktop and mobile devices. Integrated with an AI assistant that provides instant guidance, answers queries, and assists in problem-solving, improving user support efficiency and satisfaction.",
+  technologies: ["React", "Socket.io", "Ballerina.bal", "MongoDB", "AI/Chatbot Integration"],
+  features: [
+    "🤖 AI-powered assistant for instant issue resolution and guidance",
+    "📱 Support for troubleshooting desktop and mobile device problems",
+    "💬 Real-time chat interface for user inquiries and support",
+    "📊 Ticket management and progress tracking for submitted issues",
+    "🔔 Notifications for updates, responses, and follow-ups",
+    "👨‍💻 Role-based access for admins, support staff, and users",
+    "📱 Fully responsive design optimized for all devices"
   ],
+  github: "https://github.com/SKPHDeemantha/portpolio-app",
+  live: ".."
+}
+
+],
+
 
   certifications: [
     {
