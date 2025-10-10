@@ -27,21 +27,17 @@ class ResumeGenerator {
         format: "a4",
       });
 
-      const imgWidth = 210; // A4 width in mm
-      const pageHeight = 297;
+      const imgWidth = 210; // A4 width
+      const pageHeight = 297;  // A4 height
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-      let heightLeft = imgHeight;
-      let position = 0;
+      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+      let yOffset = pageHeight;
 
-      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-
-      while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
+      while (yOffset < imgHeight) {
         pdf.addPage();
-        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
+        pdf.addImage(imgData, "PNG", 0, -yOffset, imgWidth, imgHeight);
+        yOffset += pageHeight;
       }
 
       return pdf;
@@ -51,148 +47,427 @@ class ResumeGenerator {
     }
   }
 
-  // Resume HTML with professional UI
+  // Create resume element with professional two-column layout matching the screenshot
   createResumeElement() {
     const div = document.createElement("div");
     div.classList.add("resume-container");
     div.innerHTML = this.getResumeHTML();
 
-    // Attach professional CSS
+    // Attach CSS matching the screenshot style
     const style = document.createElement("style");
     style.textContent = `
       .resume-container {
         width: 210mm;
         min-height: 297mm;
         padding: 20mm;
+        margin-bottom: 20mm;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: #ffffff;
-        color: #2d3748;
+        color: #333333;
         box-sizing: border-box;
+        display: flex;
+        line-height: 1.4;
       }
-      h1 { font-size: 26px; font-weight: 700; color: #1a202c; margin: 0; }
-      h2 { font-size: 16px; font-weight: 600; color: #3182ce; margin: 0; }
-      h3 { font-size: 15px; font-weight: 700; margin: 20px 0 10px; border-bottom: 2px solid #e2e8f0; padding-bottom: 4px; }
-      h4 { font-size: 14px; font-weight: 600; color: #2d3748; margin: 0; }
-      p, li, span, div { font-size: 12px; line-height: 1.5; }
-      .resume-header { text-align: center; margin-bottom: 20px; border-bottom: 2px solid #3182ce; padding-bottom: 12px; }
-      .resume-subtitle { font-size: 12px; color: #718096; }
-      .skills-badge { background: #3182ce; color: #fff; padding: 3px 8px; border-radius: 12px; font-size: 11px; display: inline-block; margin: 3px 4px 0 0; }
-      .tools { color: #4a5568; margin-top: 6px; }
-      .section { margin-bottom: 15px; }
-      ul { padding-left: 18px; margin: 5px 0; }
-      li { margin-bottom: 4px; }
-      .project-tech { background: #edf2f7; color: #2d3748; padding: 2px 6px; border-radius: 6px; font-size: 10px; margin-right: 4px; display: inline-block; }
-      .cert { margin-bottom: 8px; }
-      .resume-footer { text-align: center; margin-top: 20px; font-size: 10px; color: #718096; border-top: 1px solid #e2e8f0; padding-top: 8px; }
+      
+      /* Left Sidebar - Dark Background */
+      .sidebar {
+        width: 35%;
+        background: #2c3e50;
+        color: white;
+        padding: 25px 20px;
+        border-radius: 8px 0 0 8px;
+      }
+      
+      /* Main Content Area */
+      .main-section {
+        width: 65%;
+        padding: 25px 30px;
+        background: #ffffff;
+      }
+      
+      /* Header Styles */
+      .resume-header {
+        text-align: center;
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid rgba(255,255,255,0.2);
+      }
+      
+      h1 { 
+        font-size: 28px; 
+        font-weight: 700; 
+        margin: 0 0 8px 0; 
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      h2 { 
+        font-size: 16px; 
+        font-weight: 400; 
+        margin: 0; 
+        color: #ecf0f1;
+        opacity: 0.9;
+      }
+      
+      /* Section Headers */
+      .section-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 25px 0 15px 0;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #3498db;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #2c3e50;
+      }
+      
+      .sidebar .section-title {
+        color: white;
+        border-bottom: 2px solid rgba(255,255,255,0.3);
+        font-size: 15px;
+      }
+      
+      /* Contact Info */
+      .contact-info {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .contact-item {
+        margin: 8px 0;
+        font-size: 13px;
+        color: #ecf0f1;
+      }
+
+      .main-section .contact-item {
+        color: #7f8c8d;
+      }
+      
+      /* Skills Section */
+      .skills-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .skills-list li {
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+        font-size: 13px;
+        transition: all 0.3s ease;
+      }
+      
+      .skills-list li:hover {
+        background: rgba(255,255,255,0.2);
+        transform: translateX(5px);
+      }
+      
+      /* Experience & Education Blocks */
+      .experience-block, .education-block, .project-block, .reference-block {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ecf0f1;
+      }
+
+      .experience-block:last-child, .education-block:last-child, .project-block:last-child, .reference-block:last-child {
+        border-bottom: none;
+      }
+      
+      .job-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 5px;
+      }
+      
+      .company {
+        font-size: 13px;
+        color: #7f8c8d;
+        font-style: italic;
+        margin-bottom: 5px;
+      }
+      
+      .date {
+        font-size: 12px;
+        color: #95a5a6;
+        margin-bottom: 10px;
+      }
+      
+      .responsibilities {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .responsibilities li {
+        margin-bottom: 6px;
+        padding-left: 15px;
+        position: relative;
+        font-size: 13px;
+      }
+      
+      .responsibilities li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #3498db;
+        font-weight: bold;
+      }
+      
+      /* Summary Section */
+      .summary-text {
+        text-align: justify;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #555;
+      }
+      
+      /* Languages */
+      .language-item {
+        margin-bottom: 8px;
+        padding: 6px 10px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+        font-size: 13px;
+      }
+      
+      /* References */
+      .references {
+        font-style: italic;
+        color: #7f8c8d;
+        font-size: 13px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      
+      /* Progress bars for skills (optional enhancement) */
+      .skill-level {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 4px;
+      }
+      
+      .skill-bar {
+        width: 60%;
+        height: 4px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      
+      .skill-progress {
+        height: 100%;
+        background: #3498db;
+        border-radius: 2px;
+      }
+      
+      /* Print optimization */
+      @media print {
+        .resume-container {
+          box-shadow: none;
+          padding: 15mm;
+        }
+      }
     `;
     div.appendChild(style);
 
     return div;
   }
 
-  // HTML Structure
+  // Generate HTML with layout matching the screenshot
   getResumeHTML() {
-    // Defensive checks to avoid undefined errors
-    const personalInfo = resumeData.personalInfo || {};
-    const summary = resumeData.summary || "";
-    const skills = resumeData.skills || { technical: [], tools: [] };
-    const experience = resumeData.experience || [];
-    const education = resumeData.education || [];
-    const projects = resumeData.projects || [];
-    const certifications = resumeData.certifications || [];
-    const lastUpdated = resumeData.lastUpdated || "";
+    // Using the data structure from your resumeData
+    const { personalInfo, summary, skills, experience, education, certifications, languages, references } = resumeData;
 
     return `
-      <div>
-        <!-- Header -->
-        <div class="resume-header">
-          <h1>${personalInfo.name || ""}</h1>
-          <h2>${personalInfo.title || ""}</h2>
-          <div class="resume-subtitle">
-            ${personalInfo.email || ""} • ${personalInfo.phone || ""} • ${personalInfo.location || ""}<br>
-            ${personalInfo.linkedin || ""} • ${personalInfo.github || ""} • ${personalInfo.portfolio || ""}
+      <div style="display:flex; width:100%; height:100%;">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+          <div class="resume-header">
+            <h1>${personalInfo.name || "Heshan Deemantha"}</h1>
+            <h2>${personalInfo.title || "Full-Stack Developer & Cloud Engineer"}</h2>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="section">
+            <h3 class="section-title">Contact</h3>
+            <div class="contact-info">
+              <div class="contact-item">${personalInfo.email || "heshandeemantha99@gmail.com"}</div>
+              <div class="contact-item">${personalInfo.phone || "+94 776171219"}</div>
+              <div class="contact-item">${personalInfo.location || "Colombo,Sri Lnka"}</div>
+              ${personalInfo.linkedin ? `<div class="contact-item">${personalInfo.linkedin}</div>` : ''}
+              ${personalInfo.github ? `<div class="contact-item">${personalInfo.github}</div>` : ''}
+            </div>
+          </div>
+
+          <!-- Technical Skills -->
+          <div class="section">
+            <h3 class="section-title">Technical Skills</h3>
+            <ul class="skills-list">
+              ${(skills.technical || ["JavaScript", "React.js", "Node.js", "MongoDB", "HTML5/CSS3"])
+                .map(skill => `<li>${skill}</li>`).join("")}
+            </ul>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="section">
+            <h3 class="section-title">Soft Skills</h3>
+            <ul class="skills-list">
+              ${(skills.soft || ["Problem Solving", "Team Collaboration", "Communication"])
+                .map(skill => `<li>${skill}</li>`).join("")}
+            </ul>
+          </div>
+
+          <!-- Languages -->
+          <div class="section">
+            <h3 class="section-title">Languages</h3>
+            ${(languages && languages.length > 0 ? languages.map(lang => `
+              <div class="language-item">
+                ${lang.language} - ${lang.proficiency}
+              </div>
+            `).join("") : `
+              <div class="language-item">English (Native)</div>
+              <div class="language-item">Spanish (Intermediate)</div>
+            `)}
+          </div>
+
+          <!-- Certifications -->
+          <div class="section">
+            <h3 class="section-title">Certifications</h3>
+            ${(certifications && certifications.length > 0 ? certifications.map(cert => `
+              <div class="language-item">
+                <strong>${cert.name}</strong><br>
+                <small>${cert.issuer} • ${cert.date}</small>
+              </div>
+            `).join("") : `
+              <div class="language-item">
+                <strong>Retail Management Certification</strong><br>
+                <small>Retail Association • 2020</small>
+              </div>
+              <div class="language-item">
+                <strong>Customer Service Excellence</strong><br>
+                <small>Service Institute • 2019</small>
+              </div>
+            `)}
           </div>
         </div>
 
-        <!-- Summary -->
-        <div class="section">
-          <h3>Professional Summary</h3>
-          <p>${summary}</p>
-        </div>
-
-        <!-- Skills -->
-        <div class="section">
-          <h3>Technical Skills</h3>
-          <div>
-            ${(skills.technical || []).map(skill => `<span class="skills-badge">${skill}</span>`).join("")}
+        <!-- Main Content -->
+        <div class="main-section">
+          <!-- Professional Summary -->
+          <div class="section">
+            <h3 class="section-title">Professional Summary</h3>
+            <p class="summary-text">
+              ${summary || "High performing retail manager with extensive experience in store operations, team leadership, and customer service. Proven track record of driving sales, managing staff, and implementing effective training programs. Skilled in optimizing operations and improving overall store performance."}
+            </p>
           </div>
-          <div class="tools"><strong>Tools:</strong> ${(skills.tools || []).join(", ")}</div>
-        </div>
 
-        <!-- Experience -->
-        <div class="section">
-          <h3>Professional Experience</h3>
-          ${experience.map(exp => `
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                <h4>${exp.position || ""}</h4>
-                <span class="resume-subtitle">${exp.duration || ""}</span>
+          <!-- Work Experience -->
+          <div class="section">
+            <h3 class="section-title">Work Experience</h3>
+            
+            ${(experience && experience.length > 0 ? experience.map(exp => `
+              <div class="experience-block">
+                <div class="job-title">${exp.position}</div>
+                <div class="company">${exp.company} • ${exp.location}</div>
+                <div class="date">${exp.duration}</div>
+                <ul class="responsibilities">
+                  ${exp.achievements.map(achievement => `<li>${achievement}</li>`).join("")}
+                </ul>
               </div>
-              <div style="color:#3182ce; font-weight:500; margin-bottom:4px;">${exp.company || ""} • ${exp.location || ""}</div>
-              <ul>${(exp.achievements || []).map(a => `<li>${a}</li>`).join("")}</ul>
-            </div>
-          `).join("")}
-        </div>
-
-        <!-- Education -->
-        <div class="section">
-          <h3>Education</h3>
-          ${education.map(edu => `
-            <div>
-              <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                <h4>${edu.degree || ""}</h4>
-                <span class="resume-subtitle">${edu.duration || ""}</span>
+            `).join("") : `
+              <!-- Default experience data matching the screenshot -->
+              <div class="experience-block">
+                <div class="job-title">Retail Store Manager</div>
+                <div class="company">Fashion Retail Store • New York, NY</div>
+                <div class="date">2019 - Present</div>
+                <ul class="responsibilities">
+                  <li>Successfully managed all aspects of store operations with a focus on sales growth</li>
+                  <li>Led a team of 15+ employees, providing training and development opportunities</li>
+                  <li>Implemented inventory management systems that reduced stock discrepancies by 25%</li>
+                  <li>Developed and executed marketing campaigns that increased foot traffic by 18%</li>
+                  <li>Maintained excellent customer service standards, achieving 95% satisfaction ratings</li>
+                </ul>
               </div>
-              <div style="color:#3182ce; font-weight:500;">${edu.institution || ""} • ${edu.location || ""}</div>
-              <div>GPA: ${edu.gpa || ""}</div>
-              <ul>${(edu.achievements || []).map(a => `<li>${a}</li>`).join("")}</ul>
-            </div>
-          `).join("")}
-        </div>
+              
+              <div class="experience-block">
+                <div class="job-title">Assistant Store Manager</div>
+                <div class="company">Department Store • New York, NY</div>
+                <div class="date">2016 - 2019</div>
+                <ul class="responsibilities">
+                  <li>Assisted in daily store operations and staff management</li>
+                  <li>Coordinated visual merchandising and product displays</li>
+                  <li>Handled customer service escalations and resolved issues effectively</li>
+                  <li>Managed inventory control and ordering processes</li>
+                </ul>
+              </div>
+            `)}
+          </div>
 
-        <!-- Projects -->
-        <div class="section">
-          <h3>Projects</h3>
-          ${projects.map(project => `
-            <div>
-              <h4>${project.name || ""}</h4>
-              <p>${project.description || ""}</p>
-              <div>${(project.technologies || []).map(tech => `<span class="project-tech">${tech}</span>`).join("")}</div>
-              <div class="resume-subtitle">GitHub: ${project.github || ""} | Live: ${project.live || ""}</div>
-            </div>
-          `).join("")}
-        </div>
+          <!-- Education -->
+          <div class="section">
+            <h3 class="section-title">Education</h3>
 
-        <!-- Certifications -->
-        <div class="section">
-          <h3>Certifications</h3>
-          ${certifications.map(cert => `
-            <div class="cert">
-              <div><strong>${cert.name || ""}</strong></div>
-              <div class="resume-subtitle">${cert.issuer || ""} • ${cert.date || ""} • ${cert.credential || ""}</div>
-            </div>
-          `).join("")}
-        </div>
+            ${(education && education.length > 0 ? education.map(edu => `
+              <div class="education-block">
+                <div class="job-title">${edu.degree}</div>
+                <div class="company">${edu.institution} • ${edu.location}</div>
+                <div class="date">${edu.duration}</div>
+                ${edu.achievements && edu.achievements.length > 0 ? `
+                  <ul class="responsibilities">
+                    ${edu.achievements.map(achievement => `<li>${achievement}</li>`).join("")}
+                  </ul>
+                ` : ''}
+              </div>
+            `).join("") : `
+              <div class="education-block">
+                <div class="job-title">Bachelor of Business Administration</div>
+                <div class="company">University of New York • New York, NY</div>
+                <div class="date">2010 - 2014</div>
+              </div>
+            `)}
+          </div>
 
-        <!-- Footer -->
-        <div class="resume-footer">
-          Last updated: ${lastUpdated} | Generated from portfolio
+          <!-- Projects -->
+          <div class="section">
+            <h3 class="section-title">Projects</h3>
+
+            ${resumeData.projects ? resumeData.projects.map(proj => `
+              <div class="project-block">
+                <div class="job-title">${proj.name}</div>
+                <div class="company">${proj.technologies.join(', ')}</div>
+                <p class="summary-text">${proj.description}</p>
+                <ul class="responsibilities">
+                  ${proj.features.map(feature => `<li>${feature}</li>`).join("")}
+                </ul>
+              </div>
+            `).join("") : ''}
+          </div>
+
+          <!-- References -->
+          <div class="section">
+            <h3 class="section-title">References</h3>
+            ${(references && references.length > 0 ? references.map(ref => `
+              <div class="reference-block">
+                <div class="job-title">${ref.name}</div>
+                <div class="company">${ref.position}</div>
+                <div class="company">${ref.company}</div>
+                <div class="contact-item">Contact: ${ref.contact}</div>
+              </div>
+            `).join("") : `
+              <p class="references">References available upon request.</p>
+            `)}
+          </div>
         </div>
       </div>
     `;
   }
 
-  // Download Resume
+  // Download Resume PDF
   async downloadResume() {
     try {
       const pdf = await this.generatePDF();

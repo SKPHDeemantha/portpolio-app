@@ -90,7 +90,7 @@ const Homepage = () => {
               </span>
             </h1>
             <p className="text-2xl lg:text-3xl text-gray-300 mb-6">
-              BackEnd Developer & Cloud Engineer
+              Full-Stack Developer & Cloud Engineer
             </p>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-8">
               I love creating beautiful, responsive web applications with modern
