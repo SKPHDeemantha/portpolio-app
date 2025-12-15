@@ -23,6 +23,7 @@ title: "Databases",
 skills: [
 { name: "MySQL", icon: "mysql", level: 88 },
 { name: "MongoDB", icon: "mongodb", level: 84 },
+{ name: "posgreSQL", icon: "postgresql", level:65},
 ],
 },
 {

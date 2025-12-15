@@ -15,7 +15,11 @@ export default function MyProjects() {
       image:
         "https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images/1738522648648EditPage.jpg,EditPage.jpg",
       techStack: ["React", "Node.js", "MongoDB", "Stripe"],
-      features: ["User Authentication", "Payment Processing", "Admin Dashboard"],
+      features: [
+        "User Authentication",
+        "Payment Processing",
+        "Admin Dashboard",
+      ],
       github: "https://github.com/SKPHDeemantha/ecommerce-platform",
       demo: "https://velvetglow2025.netlify.app/",
       year: "2024",
@@ -26,7 +30,8 @@ export default function MyProjects() {
       title: "Portfolio Website",
       description:
         "Modern responsive portfolio built with React and Tailwind CSS. Features smooth animations and interactive UI elements.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400",
+      image:
+        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400",
       techStack: ["React", "Tailwind CSS", "Framer Motion"],
       features: ["Responsive Design", "Smooth Animations", "Dark Mode"],
       github: "https://github.com/SKPHDeemantha/portfolio",
@@ -39,7 +44,8 @@ export default function MyProjects() {
       title: "Ticket Booking System",
       description:
         "Collaborative ticket booking application with real-time updates using Socket.io and Express.",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400",
+      image:
+        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400",
       techStack: ["React", "Socket.io", "Express", "mySQL"],
       features: ["Real-time Updates", "Team Collaboration", "Drag & Drop"],
       github: "https://github.com/SKPHDeemantha/task-manager",
@@ -69,7 +75,11 @@ export default function MyProjects() {
       image:
         "https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/sign/portfolioImages/113.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MDE4ODI4YS1hNzMwLTQ2Y2MtOGRmNS1hMDI3MWU3NDVjZDUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwb3J0Zm9saW9JbWFnZXMvMTEzLmpwZyIsImlhdCI6MTc2MDA4NTQwNywiZXhwIjoxOTE3NzY1NDA3fQ.UfTgourBtZtLVbi3cZpPTfZeEK5aIT9ewM3NXkqrplo",
       techStack: ["Node.js", "Telegram Bot API", "Express"],
-      features: ["Automated Replies", "Command Handling", "Real-time Messaging"],
+      features: [
+        "Automated Replies",
+        "Command Handling",
+        "Real-time Messaging",
+      ],
       github: "https://github.com/SKPHDeemantha/telegram-bot",
       demo: "https://t.me/YourBotUsername",
       year: "2023",
@@ -96,20 +106,27 @@ export default function MyProjects() {
       year: "2025",
       category: "backend" && "real-world",
     },
-    // {
-    //   id: 8,
-    //   title: "Chat Application",
-    //   description:
-    //     "Real-time chat application with private messaging, group chats, and file sharing capabilities.",
-    //   image: "https://images.unsplash.com/photo-1520333789090-1afc82db536a?w=400",
-    //   techStack: ["React", "Socket.io", "MongoDB", "JWT"],
-    //   features: ["Private Messaging", "Group Chats", "File Sharing"],
-    //   github: "https://github.com/SKPHDeemantha/chat-app",
-    //   demo: "https://your-chat-app.netlify.app",
-    //   year: "2024",
-    //   category: "fullstack",
-    //   status: "building",
-    // },
+    {
+      id: 8,
+      title: "EDUNEXXUS Virtual Learning Platform",
+      description:
+        "A comprehensive virtual learning environment designed to deliver online education through structured courses, interactive lessons, assessments, and user-friendly academic management tools.",
+      image:
+        "https://images.unsplash.com/photo-1520333789090-1afc82db536a?w=400",
+      techStack: ["HTML", "Bootstrap CSS", "MySQL", "PHP"],
+      features: [
+        "Student Progress Tracking and Reporting",
+        // "User Authentication for Students and Instructors",
+        // "Online Assignments and Assessments",
+        // "Course Creation and Content Management",
+        // "Interactive Lessons and Learning Materials",                
+        // "Discussion Forums and Academic Communication",
+      ],
+      github: "https://github.com/SKPHDeemantha/web-Technology-System-Project",
+      demo: "https://your-chat-app.netlify.app",
+      year: "2024",
+      category: "fullstack",
+    },
   ];
 
   const filters = [
@@ -191,19 +208,20 @@ export default function MyProjects() {
                 <ProjectCard project={project} />
 
                 {/* 🚧 Still Building Popup */}
-                {project.status === "building" && hoveredProject === project.id && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm rounded-2xl"
-                  >
-                    <p className="text-cyan-400 font-semibold text-lg animate-pulse">
-                      🚧 Still Building...
-                    </p>
-                  </motion.div>
-                )}
+                {project.status === "building" &&
+                  hoveredProject === project.id && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm rounded-2xl"
+                    >
+                      <p className="text-cyan-400 font-semibold text-lg animate-pulse">
+                        🚧 Still Building...
+                      </p>
+                    </motion.div>
+                  )}
               </motion.div>
             ))}
           </AnimatePresence>
