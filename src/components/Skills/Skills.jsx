@@ -40,11 +40,25 @@ className="text-3xl font-semibold text-center mb-12 bg-clip-text text-transparen
 </h2>
 
 
-<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 place-items-center">
+<motion.div
+className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 place-items-center"
+variants={{
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}}
+initial="hidden"
+whileInView="visible"
+viewport={{ once: true, amount: 0.2 }}
+>
 {category.skills.map((skill) => (
 <SkillCard key={skill.name} skill={skill} />
 ))}
-</div>
+</motion.div>
 </motion.section>
 ))}
 </div>
