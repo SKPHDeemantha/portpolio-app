@@ -27,7 +27,7 @@ export default function Skills() {
       title: "Backend Development",
       skills: [
         { name: "Node.js", icon: "nodejs", level: 90 },
-        { name: "Express.js", icon: "express", level: 85 },
+        // { name: "Express.js", icon: "expressjs", level: 85 },
         { name: "Java", icon: "java", level: 80 },
       ],
     },
@@ -118,6 +118,7 @@ export default function Skills() {
                         name={skill.icon}
                         className="text-6xl"
                         style={{ color: "#00FFFF" }}
+                        onError={() => console.warn(`Icon not found: ${skill.icon}`)}
                       />
                       <p className="text-lg font-semibold">{skill.name}</p>
 
