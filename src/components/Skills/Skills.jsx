@@ -12,7 +12,7 @@ aria-labelledby="skills-heading"
 <header className="text-center py-20">
 <h1
 id="skills-heading"
-className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500"
+className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500"
 >
 Technical Expertise
 </h1>
