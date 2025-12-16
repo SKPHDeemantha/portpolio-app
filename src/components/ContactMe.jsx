@@ -16,10 +16,10 @@ export default function ContactMe() {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID", // replace
-        "YOUR_TEMPLATE_ID", // replace
+        import.meta.env.VITE_SERVICE_ID, // replace
+        import.meta.env.VITE_TEMPLATE_ID, // replace
         form.current,
-        "YOUR_PUBLIC_KEY" // replace
+        import.meta.env.VITE_PUBLIC_KEY // replace
       )
       .then(
         () => {
