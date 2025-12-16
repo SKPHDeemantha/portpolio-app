@@ -58,7 +58,7 @@ export default function ContactMe() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-600 mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-600 mb-4">
             Let's Connect
           </h1>
           <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
