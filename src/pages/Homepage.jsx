@@ -79,7 +79,7 @@ const Homepage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6">
               Hi, I'm{" "}
               <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 <Typewritter
@@ -89,10 +89,10 @@ const Homepage = () => {
                 />
               </span>
             </h1>
-            <p className="text-2xl lg:text-3xl text-gray-300 mb-6">
+            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-6">
               Full-Stack Developer & Cloud Engineer
             </p>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-8">
+            <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-8">
               I love creating beautiful, responsive web applications with modern
               technologies and clean UI/UX design.
             </p>
@@ -147,15 +147,15 @@ const Homepage = () => {
 
             {/* Profile Image */}
             <div className="relative z-10">
-              <div className="w-72 h-72 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 p-2">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 p-2">
                 <img
                   src="https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images//My%20photo.jpg"
                   alt="Heshan Deemantha"
                   className="w-full h-full rounded-full object-cover border-4 border-gray-800"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-3xl">👋</span>
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-2xl sm:text-3xl">👋</span>
               </div>
             </div>
           </motion.div>

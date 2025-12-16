@@ -10,12 +10,12 @@ className="relative w-full min-h-screen bg-gradient-to-br from-[#020617] via-[#0
 aria-labelledby="skills-heading"
 >
 <header className="text-center py-20">
-<h1
-id="skills-heading"
-className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500"
->
-Technical Expertise
-</h1>
+          <h1
+            id="skills-heading"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500"
+          >
+            Technical Expertise
+          </h1>
 <p className="text-gray-300 text-lg mt-6 max-w-2xl mx-auto">
 My professional skill set across frontend, backend, databases, and cloud tools.
 </p>

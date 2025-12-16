@@ -31,7 +31,7 @@ export default function AboutMe() {
           >
             {/* Heading */}
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center bg-gradient-to-tr from-[#7A1CAC] via-pink-400 to-[#38f0e3] bg-clip-text text-transparent"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center bg-gradient-to-tr from-[#7A1CAC] via-pink-400 to-[#38f0e3] bg-clip-text text-transparent"
               initial={{ opacity: 0, y: -40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
