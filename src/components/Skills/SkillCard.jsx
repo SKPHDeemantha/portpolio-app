@@ -20,7 +20,7 @@ whileHover={{
   boxShadow: "0 0 30px rgba(6, 182, 212, 0.3)",
 }}
 transition={{ type: "spring", stiffness: 280 }}
-className="bg-gradient-to-br from-gray-900/70 via-gray-800/60 to-gray-900/70 border border-white/10 backdrop-blur-xl p-6 rounded-2xl w-full max-w-[220px] hover:border-cyan-400/30"
+className="bg-gradient-to-br from-gray-900/70 via-gray-800/60 to-gray-900/70 border border-white/10 backdrop-blur-xl p-4 sm:p-6 rounded-2xl w-full max-w-[180px] sm:max-w-[200px] hover:border-cyan-400/30"
 >
 <div className="flex flex-col items-center space-y-4">
 <motion.div

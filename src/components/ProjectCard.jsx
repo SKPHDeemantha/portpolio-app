@@ -13,7 +13,7 @@ export default function ProjectCard({ project }) {
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-400/50 transition-all duration-300">
+      <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-400/50 transition-all duration-300 max-w-full">
         {/* Image Container */}
         <div className="relative h-48 overflow-hidden">
           <img
