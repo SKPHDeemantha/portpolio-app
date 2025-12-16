@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Typewritter from "../components/Typewritter";
-import Skills from "../components/Skills";
+import Skills from "../components/Skills/Skills";
 import MyProjects from "../components/MyProjects";
 import ContactMe from "../components/ContactMe";
 import AboutMe from "../components/AboutMe";

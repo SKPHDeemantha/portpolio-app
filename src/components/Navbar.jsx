@@ -157,7 +157,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
               <FaGithub className="text-xl" />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/heshan-deemantha"
+              href="https://linkedin.com/in/heshan-deemantha-b91990393"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"

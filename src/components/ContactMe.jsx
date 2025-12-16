@@ -16,10 +16,10 @@ export default function ContactMe() {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID", // replace
-        "YOUR_TEMPLATE_ID", // replace
+        import.meta.env.VITE_SERVICE_ID, // replace
+        import.meta.env.VITE_TEMPLATE_ID, // replace
         form.current,
-        "YOUR_PUBLIC_KEY" // replace
+        import.meta.env.VITE_PUBLIC_KEY // replace
       )
       .then(
         () => {
@@ -116,65 +116,81 @@ export default function ContactMe() {
         </motion.form>
 
         {/* Contact Info Cards */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { delayChildren: 0.3, staggerChildren: 0.2 },
-            },
-          }}
+     <motion.div
+  className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={{
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { delayChildren: 0.3, staggerChildren: 0.2 },
+    },
+  }}
+>
+  {[
+    {
+      icon: <SiWhatsapp className="text-3xl text-green-400" />,
+      label: "0776171219",
+      bg: "from-green-500/10 to-gray-800/20",
+    },
+    {
+      icon: <FaFacebookMessenger className="text-3xl text-blue-400" />,
+      label: "Facebook Messenger",
+      bg: "from-blue-500/10 to-gray-800/20",
+      link: "https://www.facebook.com/heshan.deemantha.7",
+    },
+  ].map((item, i) => (
+    <motion.div
+      key={i}
+      variants={{
+        hidden: { opacity: 0, scale: 0.9 },
+        visible: { opacity: 1, scale: 1 },
+      }}
+      whileHover={{ scale: 1.05 }}
+      className={`p-6 rounded-2xl bg-gradient-to-br ${item.bg} border border-white/10 hover:border-white/20 shadow-lg backdrop-blur-sm transition-all duration-300`}
+    >
+      <div className="flex items-center space-x-4">
+        {item.icon}
+        {item.link ? (
+          <a
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg font-medium hover:underline"
+          >
+            {item.label}
+          </a>
+        ) : (
+          <p className="text-lg font-medium">{item.label}</p>
+        )}
+      </div>
+    </motion.div>
+  ))}
+  
+  {/* Email Box - Centered in a separate row */}
+  <motion.div
+    variants={{
+      hidden: { opacity: 0, scale: 0.9 },
+      visible: { opacity: 1, scale: 1 },
+    }}
+    whileHover={{ scale: 1.05 }}
+    className="md:col-span-2 flex justify-center" // This makes it span both columns on medium+ screens
+  >
+    <div className="p-6 rounded-2xl bg-gradient-to-br from-red-500/10 to-gray-800/20 border border-white/10 hover:border-white/20 shadow-lg backdrop-blur-sm transition-all duration-300 w-full md:w-1/2"> {/* Reduced width on medium+ screens */}
+      <div className="flex items-center space-x-4 justify-center md:justify-start">
+        <IoIosMailUnread className="text-3xl text-red-400" />
+        <a
+          href="mailto:heshandeemantha99@gmail.com"
+          className="text-lg font-medium hover:underline"
         >
-          {[
-            {
-              icon: <SiWhatsapp className="text-3xl text-green-400" />,
-              label: "0776171219",
-              bg: "from-green-500/10 to-gray-800/20",
-            },
-            {
-              icon: <FaFacebookMessenger className="text-3xl text-blue-400" />,
-              label: "Facebook Messenger",
-              bg: "from-blue-500/10 to-gray-800/20",
-              link: "https://www.facebook.com/heshan.deemantha.7",
-            },
-            {
-              icon: <IoIosMailUnread className="text-3xl text-red-400" />,
-              label: "heshandeemantha99@gmail.com",
-              bg: "from-red-500/10 to-gray-800/20",
-              link: "mailto:heshandeemantha99@gmail.com",
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              variants={{
-                hidden: { opacity: 0, scale: 0.9 },
-                visible: { opacity: 1, scale: 1 },
-              }}
-              whileHover={{ scale: 1.05 }}
-              className={`p-6 rounded-2xl bg-gradient-to-br ${item.bg} border border-white/10 hover:border-white/20 shadow-lg backdrop-blur-sm transition-all duration-300`}
-            >
-              <div className="flex items-center space-x-4">
-                {item.icon}
-                {item.link ? (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lg font-medium hover:underline"
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <p className="text-lg font-medium">{item.label}</p>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+          heshandeemantha99@gmail.com
+        </a>
+      </div>
+    </div>
+  </motion.div>
+</motion.div>
 
         {/* Back Button */}
         <motion.div
