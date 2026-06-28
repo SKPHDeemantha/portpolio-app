@@ -134,6 +134,7 @@ export default function ContactMe() {
       icon: <SiWhatsapp className="text-3xl text-green-400" />,
       label: "0776171219",
       bg: "from-green-500/10 to-gray-800/20",
+      link:"https://wa.me/0776171219",
     },
     {
       icon: <FaFacebookMessenger className="text-3xl text-blue-400" />,

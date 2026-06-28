@@ -4,8 +4,10 @@ import Navbar from "../components/Navbar";
 import Typewritter from "../components/Typewritter";
 import Skills from "../components/Skills/Skills";
 import MyProjects from "../components/MyProjects";
+import Certification from "../components/Certification";
 import ContactMe from "../components/ContactMe";
 import AboutMe from "../components/AboutMe";
+import ChatWidget from "../components/chatWidget";
 import { RiArrowDownDoubleLine, RiArrowRightDoubleLine } from "react-icons/ri";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 
@@ -24,7 +26,7 @@ const Homepage = () => {
   const handleScroll = () => {
     setShowScrollTop(window.scrollY > 300);
 
-    const sections = ["home", "about", "skills", "projects", "contact"];
+    const sections = ["home", "about", "skills", "projects", "certifications", "contact"];
     for (const section of sections) {
       const element = document.getElementById(section);
       if (element) {
@@ -50,12 +52,15 @@ const Homepage = () => {
     <div className="bg-gray-900 text-white font-sans overflow-x-hidden">
 
       {/* Scroll to Top */}
+      {/* Chat Widget — always visible */}
+      <ChatWidget />
+
       {showScrollTop && (
         <motion.button
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.1 }}
-          className="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-50 p-3 sm:p-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg shadow-cyan-500/40"
+          className="fixed bottom-24 left-5 z-50 p-3 sm:p-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg shadow-cyan-500/40"
           onClick={scrollToTop}
         >
           <MdKeyboardDoubleArrowUp className="text-white text-xl sm:text-2xl" />
@@ -187,6 +192,11 @@ const Homepage = () => {
       {/* Projects */}
       <motion.section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-800 to-gray-900">
         <MyProjects />
+      </motion.section>
+
+      {/* Certifications */}
+      <motion.section id="certifications" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800">
+        <Certification />
       </motion.section>
 
       {/* Contact */}
