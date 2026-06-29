@@ -13,7 +13,7 @@ export default function MyProjects() {
       description:
         "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
       image:
-        "https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images/1738522648648EditPage.jpg,EditPage.jpg",
+        "https://frxfojiwzmiqwwmageep.supabase.co/storage/v1/object/public/portfolioImages/1739174591624pic13.jpg,pic13.jpg",
       techStack: ["React", "Node.js", "MongoDB", "Stripe"],
       features: [
         "User Authentication",
@@ -69,22 +69,22 @@ export default function MyProjects() {
     // },
     {
       id: 6,
-      title: "Telegram-Bot",
+      title: "Chat-Bot",
       description:
-        "A custom Telegram bot built to automate tasks, provide quick responses, and enhance user interaction through real-time messaging.",
+        "A custom Chat bot built to automate tasks, provide quick responses, and enhance user interaction through real-time messaging.",
       image:
-        "https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/sign/portfolioImages/113.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MDE4ODI4YS1hNzMwLTQ2Y2MtOGRmNS1hMDI3MWU3NDVjZDUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwb3J0Zm9saW9JbWFnZXMvMTEzLmpwZyIsImlhdCI6MTc2MDA4NTQwNywiZXhwIjoxOTE3NzY1NDA3fQ.UfTgourBtZtLVbi3cZpPTfZeEK5aIT9ewM3NXkqrplo",
-      techStack: ["Node.js", "Telegram Bot API", "Express"],
+        "https://frxfojiwzmiqwwmageep.supabase.co/storage/v1/object/public/portfolioImages/chat-Bot.jpg",
+      techStack: ["AWS BEDROCK", "AWS Lamda Function", "API Gateway", "Next.js"],
       features: [
         "Automated Replies",
         "Command Handling",
         "Real-time Messaging",
       ],
-      github: "https://github.com/SKPHDeemantha/telegram-bot",
+      github: "https://github.com/SKPHDeemantha/chat-bot",
       demo: "https://t.me/YourBotUsername",
-      year: "2023",
-      category: "backend",
-      status: "building",
+      year: "2026",
+      category: "fullstack",
+
     },
     {
       id: 7,
@@ -92,7 +92,7 @@ export default function MyProjects() {
       description:
         "A comprehensive ERP system designed to streamline business operations, including sales, purchasing, inventory, and finance management, built with a modern and scalable architecture.",
       image:
-        "https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/sign/portfolioImages/7076235.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MDE4ODI4YS1hNzMwLTQ2Y2MtOGRmNS1hMDI3MWU3NDVjZDUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwb3J0Zm9saW9JbWFnZXMvNzA3NjIzNS5qcGciLCJpYXQiOjE3NjAwODM2NTcsImV4cCI6MTkxNzc2MzY1N30.8a-gJLDxlKIs_53IUnSOi4iYd_PkQGNrz6AYlekRS1Y",
+        "https://frxfojiwzmiqwwmageep.supabase.co/storage/v1/object/public/portfolioImages/ERP.jpg",
       techStack: ["Next.js", "TypeScript", "MySQL", "Prisma"],
       features: [
         "Sales & Purchase Management",
@@ -174,11 +174,10 @@ export default function MyProjects() {
             <button
               key={filter.value}
               onClick={() => setActiveFilter(filter.value)}
-              className={`px-5 sm:px-6 py-2 text-sm sm:text-base rounded-full font-semibold transition-all duration-300 ${
-                activeFilter === filter.value
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-xl scale-105"
-                  : "bg-gray-700/50 text-gray-300 hover:bg-gray-600/50"
-              }`}
+              className={`px-5 sm:px-6 py-2 text-sm sm:text-base rounded-full font-semibold transition-all duration-300 ${activeFilter === filter.value
+                ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-xl scale-105"
+                : "bg-gray-700/50 text-gray-300 hover:bg-gray-600/50"
+                }`}
             >
               {filter.label}
             </button>

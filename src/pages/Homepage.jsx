@@ -78,7 +78,7 @@ const Homepage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900" />
 
         <div className="container mx-auto py-20 relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
-          
+
           {/* Text */}
           <motion.div
             className="flex-1 text-center lg:text-left"
@@ -156,7 +156,7 @@ const Homepage = () => {
             <div className="relative z-10">
               <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 p-2">
                 <img
-                  src="https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images//My%20photo.jpg"
+                  src="https://frxfojiwzmiqwwmageep.supabase.co/storage/v1/object/public/portfolioImages/My%20photo.jpg"
                   alt="Heshan Deemantha"
                   className="w-full h-full rounded-full object-cover border-4 border-gray-800"
                 />

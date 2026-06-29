@@ -90,7 +90,7 @@ export default function AboutMe() {
           {/* Decorative gradient orbs */}
           <div className="absolute -top-24 -left-24 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl" />
           <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-pink-500/20 rounded-full blur-3xl" />
-          
+
           {/* Profile Picture Section */}
           <motion.div
             variants={imageVariants}
@@ -115,16 +115,16 @@ export default function AboutMe() {
               >
                 <div className="w-full h-full rounded-full bg-gray-900" />
               </motion.div>
-              
+
               {/* Profile Image */}
               <motion.img
-                src="https://xvuxswvxdsxzfjtsdorn.supabase.co/storage/v1/object/public/images//My%20photo.jpg"
+                src="https://frxfojiwzmiqwwmageep.supabase.co/storage/v1/object/public/portfolioImages/My%20photo.jpg"
                 alt="S.K.P. Heshan Deemantha Profile"
                 className="absolute inset-1 w-[calc(100%-8px)] h-[calc(100%-8px)] object-cover rounded-full shadow-2xl"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               />
-              
+
               {/* Glow effect */}
               <motion.div
                 className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/30 via-pink-500/30 to-cyan-400/30 blur-xl"
@@ -210,12 +210,12 @@ export default function AboutMe() {
                 >
                   About Me
                 </motion.span>
-                
+
                 <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                   Hello! I'm Heshan, a passionate{" "}
                   <span className="font-semibold text-pink-400">Fullstack Developer</span>{" "}
-                  with expertise in building scalable and interactive applications. I started with frontend development using React, 
-                  and expanded into backend technologies, APIs, and database management. 
+                  with expertise in building scalable and interactive applications. I started with frontend development using React,
+                  and expanded into backend technologies, APIs, and database management.
                   I also explore{" "}
                   <span className="font-semibold text-cyan-400">cloud engineering</span>{" "}
                   to design, deploy, and manage modern applications effectively.
@@ -223,8 +223,8 @@ export default function AboutMe() {
 
                 <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                   I specialize in{" "}
-                  <span className="font-semibold text-purple-300">React.js, Next.js, Node.js, MySQL</span>, 
-                  and enjoy working across the full software lifecycle. 
+                  <span className="font-semibold text-purple-300">React.js, Next.js, Node.js, MySQL</span>,
+                  and enjoy working across the full software lifecycle.
                   With cloud technologies, I'm comfortable leveraging
                   <span className="font-semibold text-green-300"> AWS</span>,
                   <span className="font-semibold text-blue-400"> Azure</span>, and
@@ -233,8 +233,8 @@ export default function AboutMe() {
                 </p>
 
                 <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                  Beyond coding, I enjoy exploring new tech trends, reading about UI/UX design, 
-                  and learning modern cloud-native solutions. When offline, you'll find me hiking 
+                  Beyond coding, I enjoy exploring new tech trends, reading about UI/UX design,
+                  and learning modern cloud-native solutions. When offline, you'll find me hiking
                   or diving into a good book.
                 </p>
               </motion.div>

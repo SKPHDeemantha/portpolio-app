@@ -13,82 +13,82 @@ import {
 const certificationMockData = [
   {
     id: 1,
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "March 2024",
-    expiryDate: "March 2026",
-    icon: "crown",
-    category: "Cloud",
-    credentialId: "AWS-12345678",
-    credentialUrl: "https://aws.amazon.com/certification",
-    description: "Professional-level certification for designing AWS solutions",
-    skills: ["AWS", "Cloud Architecture", "Infrastructure"]
+    title: "Prompt Engineering for ChatGPT",
+    issuer: "Vanderbilt University (Coursera)",
+    date: "2026",
+    expiryDate: null,
+    icon: "award",
+    category: "AI & Machine Learning",
+    credentialId: "ER7GP0M604ZI",
+    credentialUrl: "https://coursera.org/verify/ER7GP0M604ZI",
+    description: "Specialized course on prompt engineering techniques for ChatGPT and large language models",
+    skills: ["Prompt Engineering", "ChatGPT", "LLM", "AI"]
   },
   {
     id: 2,
-    title: "Google Cloud Professional",
-    issuer: "Google Cloud",
-    date: "January 2024",
-    expiryDate: "January 2026",
-    icon: "trophy",
+    title: "AWS Cloud Technical Essentials",
+    issuer: "Amazon Web Services (Coursera)",
+    date: "June 23, 2026",
+    expiryDate: null,
+    icon: "crown",
     category: "Cloud",
-    credentialId: "GCP-87654321",
-    credentialUrl: "https://cloud.google.com/certification",
-    description: "Advanced cloud platform expertise and best practices",
-    skills: ["Google Cloud", "Cloud Solutions", "DevOps"]
+    credentialId: "P1BGU8L019WI",
+    credentialUrl: "https://coursera.org/verify/P1BGU8L019WI",
+    description: "Foundational course on AWS cloud services and cloud computing essentials",
+    skills: ["AWS", "Cloud Computing", "Cloud Infrastructure"]
   },
   {
     id: 3,
-    title: "React Advanced Developer",
-    issuer: "React Foundation",
-    date: "November 2023",
-    expiryDate: "No expiry",
-    icon: "award",
-    category: "Frontend",
-    credentialId: "REACT-11223344",
-    credentialUrl: "https://react.dev",
-    description: "Advanced React patterns and best practices certification",
-    skills: ["React", "Component Design", "Performance"]
+    title: "Introduction to DevOps",
+    issuer: "IBM (Coursera)",
+    date: "April 3, 2026",
+    expiryDate: null,
+    icon: "trophy",
+    category: "DevOps",
+    credentialId: "WB8WRP25JZT3",
+    credentialUrl: "https://coursera.org/verify/WB8WRP25JZT3",
+    description: "Comprehensive introduction to DevOps principles, practices, and cultural philosophies",
+    skills: ["DevOps", "CI/CD", "Automation", "Agile"]
   },
   {
     id: 4,
-    title: "Full Stack Web Development",
-    issuer: "Udemy",
-    date: "August 2023",
-    expiryDate: "No expiry",
+    title: "Innovate with Ballerina Coding Challenge",
+    issuer: "IEEE Student Branch - University of Moratuwa (WSO2)",
+    date: "October 2025",
+    expiryDate: null,
     icon: "star",
-    category: "Backend",
-    credentialId: "UDEMY-99887766",
-    credentialUrl: "https://udemy.com/certificates",
-    description: "Comprehensive full-stack development course completion",
-    skills: ["Node.js", "Databases", "API Design"]
+    category: "Programming",
+    credentialId: "IWB25P-FZsu0Prpff",
+    credentialUrl: "",
+    description: "Coding challenge participation focused on Ballerina programming language and integration solutions",
+    skills: ["Ballerina", "Integration", "Coding Challenge"]
   },
   {
     id: 5,
-    title: "JavaScript ES6+ Mastery",
-    issuer: "Coursera",
-    date: "June 2023",
-    expiryDate: "No expiry",
+    title: "Best Award - Online Course Completion",
+    issuer: "SKYREK (PVT) LTD",
+    date: "June 4, 2025",
+    expiryDate: null,
     icon: "award",
-    category: "Frontend",
-    credentialId: "COURSERA-55443322",
-    credentialUrl: "https://coursera.org",
-    description: "Modern JavaScript features and advanced concepts",
-    skills: ["JavaScript", "ES6+", "Async Programming"]
+    category: "Professional Development",
+    credentialId: "",
+    credentialUrl: "",
+    description: "Certificate of completion with Best Award recognition for dedication and skill enhancement",
+    skills: ["Professional Development", "Online Learning"]
   },
   {
     id: 6,
-    title: "MongoDB Developer Associate",
-    issuer: "MongoDB University",
-    date: "April 2023",
-    expiryDate: "April 2025",
+    title: "Ballerina Coding Challenge Participation",
+    issuer: "IEEE Student Branch - University of Moratuwa (WSO2)",
+    date: "May 19 - October 20, 2025",
+    expiryDate: null,
     icon: "trophy",
-    category: "Database",
-    credentialId: "MONGO-33445566",
-    credentialUrl: "https://university.mongodb.com",
-    description: "NoSQL database design and implementation expertise",
-    skills: ["MongoDB", "NoSQL Design", "Data Modeling"]
-  },
+    category: "Programming",
+    credentialId: "",
+    credentialUrl: "",
+    description: "Certificate of participation in the Innovate with Ballerina Coding Challenge organized by IEEE University of Moratuwa in collaboration with WSO2",
+    skills: ["Ballerina", "Integration", "Coding Challenge", "WSO2"]
+  }
 ];
 
 const getCategoryColor = (category) => {
@@ -97,16 +97,16 @@ const getCategoryColor = (category) => {
     Frontend: "from-purple-500 to-pink-500",
     Backend: "from-green-500 to-emerald-500",
     Database: "from-orange-500 to-red-500",
+    "AI & Machine Learning": "from-violet-500 to-purple-600",
+    DevOps: "from-emerald-500 to-teal-500",
+    Programming: "from-amber-500 to-orange-500",
+    "Professional Development": "from-rose-500 to-pink-500",
   };
-  return colors[category] || "from-gray-500 to-slate-500";
+  return colors[category] || "from-indigo-500 to-blue-500";
 };
 
 const getIconComponent = (iconType) => {
   const iconMap = {
-    award: <Award className="w-8 h-8" />,
-    trophy: <Trophy className="w-8 h-8" />,
-    crown: <Crown className="w-8 h-8" />,
-    star: <Star className="w-8 h-8" />,
   };
   return iconMap[iconType] || <Award className="w-8 h-8" />;
 };
@@ -181,14 +181,13 @@ const CertificationCard = ({ cert, index }) => {
           </div>
           <div className="flex items-center gap-2 text-sm">
             <CheckCircle2
-              className={`w-4 h-4 ${
-                cert.expiryDate === "No expiry"
-                  ? "text-green-400"
-                  : "text-yellow-400"
-              }`}
+              className={`w-4 h-4 ${!cert.expiryDate
+                ? "text-green-400"
+                : "text-yellow-400"
+                }`}
             />
             <span className="text-gray-300">
-              Expires: {cert.expiryDate}
+              {cert.expiryDate ? `Expires: ${cert.expiryDate}` : "No expiry"}
             </span>
           </div>
         </div>
@@ -276,11 +275,10 @@ export default function Certification() {
               onClick={() => setActiveCategory(category)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-4 md:px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-                activeCategory === category
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/50"
-                  : "bg-white/10 text-gray-300 hover:bg-white/20 border border-white/10"
-              }`}
+              className={`px-4 md:px-6 py-2 rounded-full font-semibold transition-all duration-300 ${activeCategory === category
+                ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/50"
+                : "bg-white/10 text-gray-300 hover:bg-white/20 border border-white/10"
+                }`}
             >
               {category}
             </motion.button>
