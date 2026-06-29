@@ -70,14 +70,8 @@ export default function Skills() {
             {/* Skills Grid */}
             <motion.div
               className="
-                grid
-                grid-cols-2
-                xs:grid-cols-2
-                sm:grid-cols-3
-                md:grid-cols-4
-                lg:grid-cols-5
+                flex flex-wrap justify-center
                 gap-4 sm:gap-6
-                place-items-stretch
               "
               variants={{
                 hidden: { opacity: 0 },
@@ -91,7 +85,11 @@ export default function Skills() {
               viewport={{ once: true, amount: 0.2 }}
             >
               {category.skills.map((skill) => (
-                <SkillCard key={skill.name} skill={skill} />
+                <SkillCard 
+                  key={skill.name} 
+                  skill={skill} 
+                  className="flex-[0_1_calc(50%-0.5rem)] sm:flex-[0_1_calc(33.333%-1rem)] md:flex-[0_1_calc(25%-1.125rem)] lg:flex-[0_1_calc(20%-1.2rem)]" 
+                />
               ))}
             </motion.div>
           </motion.section>

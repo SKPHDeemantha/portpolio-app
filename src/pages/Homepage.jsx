@@ -8,6 +8,7 @@ import Certification from "../components/Certification";
 import ContactMe from "../components/ContactMe";
 import AboutMe from "../components/AboutMe";
 import ChatWidget from "../components/chatWidget";
+import ThreeBackground from "../components/ThreeBackground";
 import { RiArrowDownDoubleLine, RiArrowRightDoubleLine } from "react-icons/ri";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 
@@ -60,7 +61,7 @@ const Homepage = () => {
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.1 }}
-          className="fixed bottom-24 left-5 z-50 p-3 sm:p-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg shadow-cyan-500/40"
+          className="fixed bottom-28 left-4 z-50 p-3 sm:p-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg shadow-cyan-500/40"
           onClick={scrollToTop}
         >
           <MdKeyboardDoubleArrowUp className="text-white text-xl sm:text-2xl" />
@@ -75,13 +76,17 @@ const Homepage = () => {
         id="home"
         className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8"
       >
+        {/* Deep gradient base */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900" />
 
-        <div className="container mx-auto py-20 relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+        {/* 3-D animated background */}
+        <ThreeBackground />
+
+        <div className="container mx-auto py-20 relative z-10 flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-14">
 
           {/* Text */}
           <motion.div
-            className="flex-1 text-center lg:text-left"
+            className="flex-1 text-center lg:text-left order-2 lg:order-1"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -123,7 +128,7 @@ const Homepage = () => {
 
           {/* Profile */}
           <motion.div
-            className="flex-1 flex justify-center relative"
+            className="flex-1 flex justify-center relative order-1 lg:order-2"
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -135,8 +140,8 @@ const Homepage = () => {
                   key={i}
                   className="absolute w-2 h-2 sm:w-3 sm:h-3 bg-blue-400/40 rounded-full"
                   initial={{
-                    x: Math.random() * window.innerWidth,
-                    y: Math.random() * window.innerHeight,
+                    x: Math.random() * (window.innerWidth * 0.5),
+                    y: Math.random() * (window.innerHeight * 0.5),
                     opacity: 0,
                   }}
                   animate={{

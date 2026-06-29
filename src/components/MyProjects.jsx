@@ -104,7 +104,7 @@ export default function MyProjects() {
       github: "https://github.com/SKPHDeemantha/Shimmers-production",
       demo: "https://shimmers-erp-demo.vercel.app",
       year: "2025",
-      category: "backend" && "real-world",
+      category: ["backend", "real-world"],
     },
     {
       id: 8,
@@ -140,7 +140,11 @@ export default function MyProjects() {
   const filteredProjects =
     activeFilter === "all"
       ? projects
-      : projects.filter((project) => project.category === activeFilter);
+      : projects.filter((project) =>
+          Array.isArray(project.category)
+            ? project.category.includes(activeFilter)
+            : project.category === activeFilter
+        );
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">

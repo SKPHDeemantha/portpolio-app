@@ -1,10 +1,8 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { SiWhatsapp } from "react-icons/si";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { IoIosMailUnread } from "react-icons/io";
-import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -46,7 +44,7 @@ export default function ContactMe() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
+    <div className="w-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
       <Toaster position="top-right" reverseOrder={false} />
 
       <div className="flex flex-col items-center px-6 py-16 md:py-20">
@@ -184,7 +182,7 @@ export default function ContactMe() {
         <IoIosMailUnread className="text-3xl text-red-400" />
         <a
           href="mailto:heshandeemantha99@gmail.com"
-          className="text-lg font-medium hover:underline"
+          className="text-lg font-medium hover:underline break-all"
         >
           heshandeemantha99@gmail.com
         </a>
@@ -193,21 +191,7 @@ export default function ContactMe() {
   </motion.div>
 </motion.div>
 
-        {/* Back Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-16"
-        >
-          <Link to="/">
-            {/* <button className="flex items-center space-x-2 bg-gradient-to-r from-gray-600 to-gray-700 px-6 py-3 rounded-full hover:scale-105 transition transform duration-300 text-white shadow-md">
-              <MdKeyboardDoubleArrowLeft className="text-xl" />
-              <span>Back to Home</span>
-            </button> */}
-          </Link>
-        </motion.div>
+
       </div>
     </div>
   );
