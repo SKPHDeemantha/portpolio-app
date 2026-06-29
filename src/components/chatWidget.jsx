@@ -111,12 +111,12 @@ export default function ChatWidget() {
         <>
             {/* ── Chat Panel ─────────────────────────────────────── */}
             <div
-                className={`fixed bottom-24 right-5 z-50 w-[380px] max-w-[calc(100vw-2rem)] flex flex-col rounded-3xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${open
+                className={`fixed bottom-24 right-2 sm:right-5 z-50 w-[calc(100vw-1rem)] sm:w-[380px] flex flex-col rounded-3xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${open
                         ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
                         : "opacity-0 translate-y-8 scale-95 pointer-events-none"
                     }`}
                 style={{
-                    height: open ? "540px" : "0",
+                    height: open ? "min(540px, 85dvh)" : "0",
                     background:
                         "linear-gradient(145deg, rgba(15,15,30,0.97) 0%, rgba(20,20,45,0.97) 100%)",
                     backdropFilter: "blur(24px)",

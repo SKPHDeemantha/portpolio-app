@@ -8,6 +8,10 @@ const Navbar = ({ activeSection, scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Single source of truth for social URLs
+  const GITHUB_URL = "https://github.com/SKPHDeemantha";
+  const LINKEDIN_URL = "https://linkedin.com/in/heshan-deemantha-b91990393";
+
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
@@ -119,7 +123,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
@@ -146,9 +150,9 @@ const Navbar = ({ activeSection, scrollToSection }) => {
           </div>
 
           {/* Desktop Social Links & Resume */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             <motion.a
-              href="https://github.com/SKPHDeemantha"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
@@ -158,7 +162,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
               <FaGithub className="text-xl" />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/heshan-deemantha-b91990393"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
@@ -180,7 +184,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="lg:hidden text-gray-300 focus:outline-none p-2"
+            className="md:hidden text-gray-300 focus:outline-none p-2"
             onClick={() => setIsOpen(!isOpen)}
           >
             <motion.div
@@ -202,7 +206,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
       {/* Mobile Menu */}
       {isOpen && (
         <motion.div 
-          className="lg:hidden bg-gray-900/95 backdrop-blur-lg border-t border-gray-800/50"
+          className="md:hidden bg-gray-900/95 backdrop-blur-lg border-t border-gray-800/50"
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: 'auto', opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
@@ -233,7 +237,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
               <div className="border-t border-gray-800 pt-4 mt-4">
                 <div className="flex justify-center space-x-6 mb-4">
                   <a
-                    href="https://github.com/SKPHDeemantha"
+                    href={GITHUB_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-cyan-400 transition-colors"
@@ -241,7 +245,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
                     <FaGithub className="text-xl" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/heshan-deemantha"
+                    href={LINKEDIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-cyan-400 transition-colors"

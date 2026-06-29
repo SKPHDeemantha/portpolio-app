@@ -10,7 +10,7 @@ const iconVariants = {
   hover: { scale: 1.12, rotate: 6 },
 };
 
-export default function SkillCard({ skill }) {
+export default function SkillCard({ skill, className = "" }) {
   return (
     <motion.article
       variants={cardVariants}
@@ -19,9 +19,10 @@ export default function SkillCard({ skill }) {
         boxShadow: "0 0 30px rgba(6, 182, 212, 0.3)",
       }}
       transition={{ type: "spring", stiffness: 260, damping: 18 }}
-      className="
+      className={`
         relative
         w-full
+        ${className}
         h-full
         rounded-2xl
         border border-white/10
@@ -32,7 +33,7 @@ export default function SkillCard({ skill }) {
         focus-within:ring-2 focus-within:ring-cyan-400/40
         hover:border-cyan-400/30
         transition-colors
-      "
+      `}
     >
       <div className="flex flex-col items-center justify-between w-full h-full space-y-4">
         {/* Icon */}
