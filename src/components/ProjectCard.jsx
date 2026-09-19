@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { useState } from "react";
+import { Cloud, ShieldCheck } from "lucide-react";
 
 export default function ProjectCard({ project }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -38,7 +39,7 @@ export default function ProjectCard({ project }) {
             overflow-hidden
           "
         >
-          <img
+          {project.image ? <img
             src={project.image}
             alt={project.title}
             loading="lazy"
@@ -47,7 +48,14 @@ export default function ProjectCard({ project }) {
               transition-transform duration-300
               group-hover:scale-110
             "
-          />
+          /> : (
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-950 via-blue-950 to-cyan-900" aria-hidden="true">
+              <div className="relative text-cyan-300">
+                <Cloud className="w-28 h-28" strokeWidth={1} />
+                <ShieldCheck className="absolute -bottom-1 -right-3 w-12 h-12 text-emerald-300 bg-blue-950 rounded-full p-1" strokeWidth={1.5} />
+              </div>
+            </div>
+          )}
 
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70" />
 
@@ -73,6 +81,11 @@ export default function ProjectCard({ project }) {
 
         {/* ================= CONTENT ================= */}
         <div className="flex flex-col flex-1 p-4 sm:p-5">
+          {(project.status === "in-progress" || project.status === "building") && (
+            <span className="self-start mb-3 rounded-full border border-amber-400/30 bg-amber-400/10 px-2.5 py-1 text-xs font-semibold text-amber-300">
+              In Progress
+            </span>
+          )}
           <h3
             className="
               text-base sm:text-lg md:text-xl
@@ -88,7 +101,6 @@ export default function ProjectCard({ project }) {
               text-gray-400
               text-xs sm:text-sm
               mb-4
-              line-clamp-2
               leading-relaxed
             "
           >
@@ -116,7 +128,7 @@ export default function ProjectCard({ project }) {
           {/* ================= FOOTER ================= */}
           <div className="mt-auto flex items-center justify-between">
             <div className="flex gap-2 sm:gap-3">
-              <motion.a
+              {project.github && <motion.a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -132,9 +144,9 @@ export default function ProjectCard({ project }) {
                 whileTap={{ scale: 0.9 }}
               >
                 <FaGithub className="text-gray-300 text-sm sm:text-base" />
-              </motion.a>
+              </motion.a>}
 
-              <motion.a
+              {project.demo && <motion.a
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -150,7 +162,7 @@ export default function ProjectCard({ project }) {
                 whileTap={{ scale: 0.9 }}
               >
                 <FaExternalLinkAlt className="text-gray-300 text-sm sm:text-base" />
-              </motion.a>
+              </motion.a>}
             </div>
 
             <span className="text-[10px] sm:text-xs text-gray-500">

@@ -12,6 +12,32 @@ import {
 
 const certificationMockData = [
   {
+    id: 7,
+    title: "The Blockchain",
+    issuer: "University of California, Irvine (Coursera)",
+    date: "September 19, 2026",
+    expiryDate: null,
+    icon: "award",
+    category: "Blockchain",
+    credentialId: "EIBL7E9N0F42",
+    credentialUrl: "https://coursera.org/verify/EIBL7E9N0F42",
+    description: "Completed The Blockchain, an online course authorized by the University of California, Irvine and offered through Coursera",
+    skills: ["Blockchain"]
+  },
+  {
+    id: 8,
+    title: "AWS Cloud Practitioner Essentials",
+    issuer: "Amazon Web Services (Coursera)",
+    date: "August 17, 2026",
+    expiryDate: null,
+    icon: "crown",
+    category: "Cloud",
+    credentialId: "FH43AGLTNH48",
+    credentialUrl: "https://coursera.org/verify/FH43AGLTNH48",
+    description: "Completed AWS Cloud Practitioner Essentials, an online course authorized by Amazon Web Services and offered through Coursera",
+    skills: ["AWS", "Cloud Computing"]
+  },
+  {
     id: 1,
     title: "Prompt Engineering for ChatGPT",
     issuer: "Vanderbilt University (Coursera)",
@@ -94,6 +120,7 @@ const certificationMockData = [
 const getCategoryColor = (category) => {
   const colors = {
     Cloud: "from-blue-500 to-cyan-500",
+    Blockchain: "from-indigo-500 to-violet-500",
     Frontend: "from-purple-500 to-pink-500",
     Backend: "from-green-500 to-emerald-500",
     Database: "from-orange-500 to-red-500",

@@ -8,6 +8,24 @@ export default function MyProjects() {
 
   const projects = [
     {
+      id: 10,
+      title: "Cloud Network Monitoring & Security Platform (CNMS)",
+      description:
+        "An AWS-focused cloud security platform in development, with infrastructure exploration, interactive network topology, rule-based risk detection, and finding management. Working demo mode; live AWS integrations are still developing.",
+      techStack: ["Next.js", "TypeScript", "AWS SDK", "React", "Tailwind CSS", "Node.js", "PostgreSQL", "SSE", "Docker"],
+      features: [
+        "Infrastructure & Network Topology",
+        "Rule-based Security Scanning",
+        "Finding Management",
+        "Live Scan Updates",
+        "Role-based Access & MFA",
+        "Optional AI Explanations",
+      ],
+      year: "2026",
+      category: "fullstack",
+      status: "in-progress",
+    },
+    {
       id: 1,
       title: "E-Commerce Platform",
       description:
@@ -125,6 +143,27 @@ export default function MyProjects() {
       github: "https://github.com/SKPHDeemantha/web-Technology-System-Project",
       demo: "https://your-chat-app.netlify.app",
       year: "2024",
+      category: "fullstack",
+    },
+    {
+      id: 9,
+      title: "SuwaCarez - Health Management System",
+      description:
+        "A digital health management platform that centralizes patient healthcare interactions, connecting patients directly with their health records, appointment scheduling, and clinical consultations in one secure, easy-to-use platform.",
+      image:
+        "https://frxfojiwzmiqwwmageep.supabase.co/storage/v1/object/public/portfolioImages/icon.png",
+      techStack: ["Next.js", "TypeScript", "PostgreSQL", "AWS"],
+      features: [
+        "Appointment Management",
+        "Lab Results Access",
+        "Digital Prescriptions",
+        "Vitals Tracking",
+        "Bank-grade Security & 2FA",
+      ],
+      github:
+        "https://github.com/SKPHDeemantha/SUWACARE-HEALTH-MANAGEMENT-SYSTEM",
+      demo: "https://suwacarez.vercel.app/",
+      year: "2026",
       category: "fullstack",
     },
   ];

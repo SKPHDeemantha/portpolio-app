@@ -15,6 +15,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'certifications', label: 'Certifications' },
@@ -123,7 +124,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden xl:flex items-center space-x-1">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
@@ -150,7 +151,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
           </div>
 
           {/* Desktop Social Links & Resume */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden xl:flex items-center space-x-4">
             <motion.a
               href={GITHUB_URL}
               target="_blank"
@@ -184,7 +185,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-gray-300 focus:outline-none p-2"
+            className="xl:hidden text-gray-300 focus:outline-none p-2"
             onClick={() => setIsOpen(!isOpen)}
           >
             <motion.div
@@ -206,7 +207,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
       {/* Mobile Menu */}
       {isOpen && (
         <motion.div 
-          className="md:hidden bg-gray-900/95 backdrop-blur-lg border-t border-gray-800/50"
+          className="xl:hidden bg-gray-900/95 backdrop-blur-lg border-t border-gray-800/50"
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: 'auto', opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}

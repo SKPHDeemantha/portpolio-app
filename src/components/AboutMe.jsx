@@ -133,7 +133,7 @@ export default function AboutMe() {
           {[
             { value: "2+", label: "Years Coding", icon: "💻", color: "from-purple-500 to-indigo-500" },
             { value: "10+", label: "Projects Built", icon: "🚀", color: "from-pink-500 to-rose-500" },
-            { value: "6+", label: "Certifications", icon: "🏆", color: "from-amber-500 to-orange-500" },
+            { value: "8+", label: "Certifications", icon: "🏆", color: "from-amber-500 to-orange-500" },
             { value: "3+", label: "Cloud Platforms", icon: "☁️", color: "from-cyan-500 to-blue-500" },
           ].map((stat, i) => (
             <motion.div
