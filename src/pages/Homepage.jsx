@@ -7,6 +7,7 @@ import MyProjects from "../components/MyProjects";
 import Certification from "../components/Certification";
 import ContactMe from "../components/ContactMe";
 import AboutMe from "../components/AboutMe";
+import WorkExperience from "../components/WorkExperience";
 import ChatWidget from "../components/chatWidget";
 import ThreeBackground from "../components/ThreeBackground";
 import { RiArrowDownDoubleLine, RiArrowRightDoubleLine } from "react-icons/ri";
@@ -27,7 +28,7 @@ const Homepage = () => {
   const handleScroll = () => {
     setShowScrollTop(window.scrollY > 300);
 
-    const sections = ["home", "about", "skills", "projects", "certifications", "contact"];
+    const sections = ["home", "about", "experience", "skills", "projects", "certifications", "contact"];
     for (const section of sections) {
       const element = document.getElementById(section);
       if (element) {
@@ -188,6 +189,10 @@ const Homepage = () => {
       <motion.section id="about" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-800 to-gray-900">
         <AboutMe />
       </motion.section>
+
+      <section id="experience" aria-labelledby="experience-heading" className="scroll-mt-24 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <WorkExperience />
+      </section>
 
       {/* Skills */}
       <motion.section id="skills" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800">

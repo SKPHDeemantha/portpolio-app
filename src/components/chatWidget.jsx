@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import ChatRobot from "./ChatRobot";
 
 export default function ChatWidget() {
     const [open, setOpen] = useState(false);
@@ -111,12 +112,16 @@ export default function ChatWidget() {
         <>
             {/* ── Chat Panel ─────────────────────────────────────── */}
             <div
-                className={`fixed bottom-24 right-2 sm:right-5 z-50 w-[calc(100vw-1rem)] sm:w-[380px] flex flex-col rounded-3xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${open
+                id="ai-chat-panel"
+                aria-label="AI assistant chat"
+                aria-hidden={!open}
+                inert={open ? undefined : ""}
+                className={`fixed bottom-36 right-2 sm:right-5 z-[60] w-[calc(100vw-1rem)] sm:w-[380px] flex flex-col rounded-3xl overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${open
                         ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
                         : "opacity-0 translate-y-8 scale-95 pointer-events-none"
                     }`}
                 style={{
-                    height: open ? "min(540px, 85dvh)" : "0",
+                    height: open ? "min(540px, calc(100dvh - 10rem))" : "0",
                     background:
                         "linear-gradient(145deg, rgba(15,15,30,0.97) 0%, rgba(20,20,45,0.97) 100%)",
                     backdropFilter: "blur(24px)",
@@ -507,68 +512,15 @@ export default function ChatWidget() {
                 id="chat-widget-toggle"
                 onClick={() => setOpen((v) => !v)}
                 title={open ? "Close chat" : "Chat with Heshan's AI"}
-                className="fixed bottom-6 right-5 z-50 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
-                style={{
-                    background: open
-                        ? "rgba(30,30,60,0.95)"
-                        : "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%)",
-                    boxShadow: open
-                        ? "0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08)"
-                        : "0 8px 32px rgba(99,102,241,0.5), 0 0 0 1px rgba(99,102,241,0.3)",
-                }}
+                aria-label={open ? "Close AI assistant" : "Open AI assistant"}
+                aria-expanded={open}
+                aria-controls="ai-chat-panel"
+                className="fixed bottom-3 right-3 sm:right-5 z-[60] flex flex-col items-center rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
             >
-                <span
-                    className={`absolute transition-all duration-300 ${open
-                            ? "opacity-100 rotate-0 scale-100"
-                            : "opacity-0 rotate-90 scale-50"
-                        }`}
-                >
-                    <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2.5}
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M6 18L18 6M6 6l12 12"
-                        />
-                    </svg>
+                <ChatRobot />
+                <span className="-mt-2 rounded-full border border-cyan-300/25 bg-slate-950/90 px-3 py-1 text-[10px] font-semibold tracking-wide text-cyan-100 shadow-lg backdrop-blur-md">
+                    {open ? "Close chat" : "Ask my AI"}
                 </span>
-                <span
-                    className={`absolute transition-all duration-300 ${open
-                            ? "opacity-0 -rotate-90 scale-50"
-                            : "opacity-100 rotate-0 scale-100"
-                        }`}
-                >
-                    <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
-                        />
-                    </svg>
-                </span>
-
-                {/* Pulse ring when closed */}
-                {!open && (
-                    <span
-                        className="absolute inset-0 rounded-2xl animate-ping"
-                        style={{
-                            background:
-                                "linear-gradient(135deg, #6366f1 0%, #a855f7 100%)",
-                            opacity: 0.18,
-                        }}
-                    />
-                )}
             </button>
 
             {/* ── Global keyframe styles ──────────────────────────── */}
